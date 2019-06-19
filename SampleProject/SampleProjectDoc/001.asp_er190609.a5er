@@ -1,0 +1,682 @@
+﻿# A5:ER FORMAT:12
+# A5:ER ENCODING:UTF8
+# A5:ER Mk-1 Copyright (C)2007 m.matsubara
+# A5:SQL Mk-2 Copyright (C)1997 m.matsubara
+#  http://www.wind.sannet.ne.jp/m_matsu/developer/a5m2/
+
+[Manager]
+ProjectName=SSSS
+Author=
+MaxEntityRowShow=1000
+ReadOnlyRecommend=0
+Page=Main
+PageInfo="Main",2,"A3Landscape",$FFFFFF
+LogicalView=1
+DecodeDomain=0
+ViewModePageIndividually=1
+ViewMode=2
+ViewFormat=0
+UseNondependenceDashLine=0
+FontName=Tahoma
+FontSize=6
+PaperSize=A4Landscape
+HeaderLeft=
+HeaderCenter=
+HeaderRight=
+FooterLeft=
+FooterCenter=
+FooterRight=
+ShowPageoutRelation=1
+RDBMSType=4
+RDBMSTypeName=Microsoft SQL Server 2008
+GenerateComment=0
+BackupRestoreTempTable=0
+CreateFk=1
+FkOnDeleteOption=on delete cascade
+FkOnUpdateOption=on update cascade
+DefaultPkName=%0:s_PKC
+DefaultPkIndexName=%0:s_PKI
+DefaultIndexName=%0:s_IX%1:d
+DefaultFkName=%0:s_FK%1:d
+SqlSeparator=0
+ShowTag=1
+ShowCommonAttributes=0
+
+[Entity]
+PName=S_SYSTEM_SETTING
+LName=システム設定
+Comment=
+TableOption=
+Page=MAIN
+Left=1700
+Top=1800
+Field="F_ID","F_ID","@INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="設定１","SETTING1","NVARCHAR(max)","NOT NULL",,"","",$FFFFFFFF,""
+Field="設定2","SETTING2","NVARCHAR(max)","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20190619075255
+Position="MAIN",1700,1800
+
+[Entity]
+PName=S_DATABASE_VERSION
+LName=データベースバージョン
+Comment=
+TableOption=
+Page=MAIN
+Left=1700
+Top=1650
+Field="F_ID","F_ID","@INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="バージョン","F_VERSION","NVARCHAR(max)","NOT NULL",,"","",$FFFFFFFF,""
+Field="作成日","F_CREATE_DATE","@DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20190619075251
+Position="MAIN",1700,1650
+
+[Relation]
+Entity1=M_MONEY_TRANSFER_TYPE
+Entity2=T_APPLY_MODIFY
+RelationType1=2
+RelationType2=3
+Fields1=F_ID
+Fields2=F_MONEY_TRANSFER_TYPE
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,6732,6542,7159,R,R
+Dependence=0
+Caption=
+PName=
+ModifiedDateTime=20190609080411
+LineMode=0
+Bar1=673
+Bar2=654
+Bar3=716
+TermPos1=R
+TermPos2=R
+
+[Relation]
+Entity1=M_MONEY_TRANSFER_TYPE
+Entity2=T_APPLY_ENTRY
+RelationType1=2
+RelationType2=3
+Fields1=F_ID
+Fields2=F_MONEY_TRANSFER_TYPE
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,1663,5514,7011,R,R
+Dependence=0
+Caption=
+PName=
+ModifiedDateTime=20190619082529
+LineMode=0
+Bar1=166
+Bar2=551
+Bar3=701
+TermPos1=R
+TermPos2=R
+
+[Entity]
+PName=M_MONEY_TRANSFER_TYPE
+LName=金銭授受の支払元種別マスタ
+Comment=
+TableOption=
+Page=MAIN
+Left=2550
+Top=1000
+Field="F_ID","F_ID","@INT","NOT NULL",0,"","",$FFFFFFFF,"IDENTITY(1,1)"
+Field="金銭授受の支払元名","F_NAME","nvarchar(MAX)","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20190619075750
+Position="MAIN",2550,1000,225,103
+
+[Relation]
+Entity1=M_INVASION_TYPE
+Entity2=T_APPLY_MODIFY
+RelationType1=2
+RelationType2=3
+Fields1=F_ID
+Fields2=F_INVASION_TYPE
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,7041,8794,5124,R,R
+Dependence=0
+Caption=
+PName=
+ModifiedDateTime=20190609080115
+LineMode=0
+Bar1=704
+Bar2=879
+Bar3=512
+TermPos1=R
+TermPos2=R
+
+[Relation]
+Entity1=M_INVASION_TYPE
+Entity2=T_APPLY_ENTRY
+RelationType1=2
+RelationType2=3
+Fields1=F_ID
+Fields2=F_INVASION_TYPE
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,1663,8337,5064,R,R
+Dependence=0
+Caption=
+PName=
+ModifiedDateTime=20190609080100
+LineMode=0
+Bar1=166
+Bar2=834
+Bar3=506
+TermPos1=R
+TermPos2=R
+
+[Relation]
+Entity1=T_ROOT
+Entity2=T_APPLY_ENTRY
+RelationType1=2
+RelationType2=3
+Fields1=F_ID
+Fields2=F_ID
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,1865,8337,324,R,R
+Dependence=1
+Caption=
+PName=
+LineMode=0
+Bar1=186
+Bar2=834
+Bar3=32
+TermPos1=R
+TermPos2=R
+
+[Entity]
+PName=T_APPLY_ENTRY
+LName=新規申請データ
+Comment=
+TableOption=
+Page=MAIN
+Left=1850
+Top=450
+Field="F_ID","F_ID","@INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="バージョン","F_VERSION","@INT","NOT NULL",1,"","",$FFFFFFFF,""
+Field="タイトル","F_TITLE","nvarchar(MAX)","NOT NULL",,"","",$FFFFFFFF,""
+Field="研究開始日","F_BEGIN_DATE","@DATE","NOT NULL",,"","",$FFFFFFFF,""
+Field="研究終了日","F_END_DATE","@DATE","NOT NULL",,"","",$FFFFFFFF,""
+Field="研究詳細","F_COMMENT","nvarchar(MAX)","NOT NULL",,"","",$FFFFFFFF,""
+Field="侵襲の有無","F_IS_INVASION","BIT","NOT NULL",,"","あり、なし",$FFFFFFFF,""
+Field="侵襲タイプ","F_INVASION_TYPE","@INT","NOT NULL",,"","軽微、重度",$FFFFFFFF,""
+Field="侵襲タイプ_重度_備考","F_INVASION_SEVERE_TEXT","nvarchar(MAX)","NOT NULL",,"","",$FFFFFFFF,""
+Field="金銭の授受の有無","F_IS_MONEY_TRANSFER","BIT","NOT NULL",,"","あり、なし",$FFFFFFFF,""
+Field="金銭の授受の支払元","F_MONEY_TRANSFER_TYPE","@INT","NOT NULL",,"","法人、個人、その他",$FFFFFFFF,""
+Field="作成者","F_CREATE_USER_ID","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="更新者","F_UPDATE_USER_ID","@INT",,,"","",$FFFFFFFF,""
+Field="作成日","F_CREATE_DATE","@DATE","NOT NULL",,"","",$FFFFFFFF,""
+Field="更新日","F_UPDATE_DATE","@DATE",,,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20190609075920
+Position="MAIN",1850,450
+
+[Entity]
+PName=M_INVASION_TYPE
+LName=侵襲種別マスタ
+Comment=
+TableOption=
+Page=MAIN
+Left=2450
+Top=800
+Field="F_ID","F_ID","@INT","NOT NULL",0,"","",$FFFFFFFF,"IDENTITY(1,1)"
+Field="侵襲の種別名","F_NAME","nvarchar(MAX)","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20190619075747
+Position="MAIN",2450,800,159,96
+
+[Relation]
+Entity1=M_MODIFY_TYPE
+Entity2=T_APPLY_MODIFY
+RelationType1=2
+RelationType2=3
+Fields1=F_ID
+Fields2=F_MODIFY_TYPE
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,5176,4824,1262,R,R
+Dependence=1
+Caption=
+PName=
+ModifiedDateTime=20190609075305
+LineMode=0
+Bar1=518
+Bar2=482
+Bar3=126
+TermPos1=R
+TermPos2=R
+
+[Entity]
+PName=M_MODIFY_TYPE
+LName=変更の種類マスタ
+Comment=
+TableOption=
+Page=MAIN
+Left=2150
+Top=900
+Field="F_ID","F_ID","@INT","NOT NULL",0,"","",$FFFFFFFF,"IDENTITY(1,1)"
+Field="変更の種別名","F_NAME","nvarchar(MAX)","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20190619075754
+Position="MAIN",2150,900
+
+[Entity]
+PName=T_USER_ENTRY
+LName=ユーザー登録申請
+Comment=
+TableOption=
+Page=MAIN
+Left=450
+Top=1250
+Field="F_ID","F_ID","@INT","NOT NULL",0,"","",$FFFFFFFF,"IDENTITY(1,1)"
+Field="氏","F_LAST_NAME","nvarchar(MAX)","NOT NULL",,"","",$FFFFFFFF,""
+Field="名","F_FIRST_NAME","nvarchar(MAX)","NOT NULL",,"","",$FFFFFFFF,""
+Field="氏（かな）","F_LAST_NAME_KANA","nvarchar(MAX)","NOT NULL",,"","",$FFFFFFFF,""
+Field="名（かな）","F_FIRST_NAME_KANA","nvarchar(MAX)","NOT NULL",,"","",$FFFFFFFF,""
+Field="メールアドレス","F_EMAIL","nvarchar(MAX)","NOT NULL",,"","",$FFFFFFFF,""
+Field="パスワード","F_PASS","nvarchar(MAX)","NOT NULL",,"","",$FFFFFFFF,""
+Field="作成者ID","F_CREATE_USER_ID","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="更新者ID","F_UPDATE_USER_ID","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="更新日","F_UPDATE_DATE","@DATE","NOT NULL",,"","",$FFFFFFFF,""
+Field="作成日","F_CREATE_DATE","@DATE","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20190619075803
+Position="MAIN",450,1250,369,279
+
+[Entity]
+PName=T_LOGIN_HISTORY
+LName=ログイン履歴
+Comment=
+TableOption=
+Page=MAIN
+Left=100
+Top=1250
+Field="F_ID","F_ID","@INT","NOT NULL",0,"","",$FFFFFFFF,"IDENTITY(1,1)"
+Field="入力されたメールアドレス","F_INPUT_MAIL","NVARCHAR(max)","NOT NULL",,"","",$FFFFFFFF,""
+Field="ログイン結果","F_LOGIN_RESULT","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="IP","F_IP","NVARCHAR(max)","NOT NULL",,"","",$FFFFFFFF,""
+Field="作成日","F_CREATE_DATE","@DATE","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20190619075759
+Position="MAIN",100,1250
+
+[Relation]
+Entity1=T_ROOT
+Entity2=T_APPLY_MODIFY
+RelationType1=2
+RelationType2=3
+Fields1=F_ID
+Fields2=F_ID
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,4176,3280,485,R,R
+Dependence=1
+Caption=
+PName=
+LineMode=0
+Bar1=418
+Bar2=328
+Bar3=48
+TermPos1=R
+TermPos2=R
+
+[Entity]
+PName=T_APPLY_MODIFY
+LName=変更申請データ
+Comment=
+TableOption=
+Page=MAIN
+Left=1750
+Top=1000
+Field="F_ID","F_ID","@INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="バージョン","F_VERSION","@INT","NOT NULL",1,"","",$FFFFFFFF,""
+Field="変更の種類","F_MODIFY_TYPE","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="タイトル","F_TITLE","nvarchar(MAX)","NOT NULL",,"","",$FFFFFFFF,""
+Field="研究開始日","F_BEGIN_DATE","@DATE","NOT NULL",,"","",$FFFFFFFF,""
+Field="研究終了日","F_END_DATE","@DATE","NOT NULL",,"","",$FFFFFFFF,""
+Field="研究詳細","F_COMMENT","nvarchar(MAX)","NOT NULL",,"","",$FFFFFFFF,""
+Field="侵襲の有無","F_IS_INVASION","BIT","NOT NULL",,"","あり、なし",$FFFFFFFF,""
+Field="侵襲タイプ","F_INVASION_TYPE","@INT","NOT NULL",,"","軽微、重度",$FFFFFFFF,""
+Field="侵襲タイプ_重度_備考","F_INVASION_SEVERE_TEXT","nvarchar(MAX)","NOT NULL",,"","",$FFFFFFFF,""
+Field="金銭の授受の有無","F_IS_MONEY_TRANSFER","BIT","NOT NULL",,"","あり、なし",$FFFFFFFF,""
+Field="金銭の授受の支払元","F_MONEY_TRANSFER_TYPE","@INT","NOT NULL",,"","法人、個人、その他",$FFFFFFFF,""
+Field="作成者","F_CREATE_USER_ID","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="更新者","F_UPDATE_USER_ID","@INT",,,"","",$FFFFFFFF,""
+Field="作成日","F_CREATE_DATE","@DATE","NOT NULL",,"","",$FFFFFFFF,""
+Field="更新日","F_UPDATE_DATE","@DATE",,,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20190609080312
+Position="MAIN",1750,1000
+
+[Relation]
+Entity1=M_FLOW_TYPE
+Entity2=T_FLOW
+RelationType1=2
+RelationType2=3
+Fields1=F_ID
+Fields2=F_FLOW_TYPE
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,2016,7984,2832,R,R
+Dependence=0
+Caption=
+PName=
+ModifiedDateTime=20190606104424
+LineMode=0
+Bar1=202
+Bar2=798
+Bar3=283
+TermPos1=R
+TermPos2=R
+
+[Relation]
+Entity1=T_ROOT
+Entity2=T_FLOW
+RelationType1=2
+RelationType2=3
+Fields1=F_ID
+Fields2=F_ID
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,4433,2401,2459,R,R
+Dependence=1
+Caption=
+PName=
+ModifiedDateTime=20190606104403
+LineMode=0
+Bar1=443
+Bar2=240
+Bar3=246
+TermPos1=R
+TermPos2=R
+
+[Entity]
+PName=M_FLOW_TYPE
+LName=処理種別マスタ
+Comment=
+TableOption=
+Page=MAIN
+Left=300
+Top=650
+Field="F_ID","F_ID","@INT","NOT NULL",0,"","",$FFFFFFFF,"IDENTITY(1,1)"
+Field="処理種別名","F_NAME","nvarchar(MAX)","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20190619075739
+Position="MAIN",300,650
+
+[Entity]
+PName=T_FLOW
+LName=処理フロー
+Comment=
+TableOption=
+Page=MAIN
+Left=800
+Top=750
+Field="F_ID","F_ID","@INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="処理番号","F_NUMBER","@INT","NOT NULL",1,"","",$FFFFFFFF,""
+Field="処理種別","F_FLOW_TYPE","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="作成者ID","F_CREATE_USER_ID","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="作成日","F_CREATE_DATE","@DATE","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20190606104201
+Position="MAIN",800,750
+
+[Relation]
+Entity1=M_APPLY_TYPE
+Entity2=T_ROOT
+RelationType1=2
+RelationType2=3
+Fields1=F_ID
+Fields2=F_APPLY_TYPE
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,3053,3764,4975,R,R
+Dependence=0
+Caption=
+PName=
+ModifiedDateTime=20190603212511
+LineMode=0
+Bar1=305
+Bar2=376
+Bar3=498
+TermPos1=R
+TermPos2=R
+
+[Entity]
+PName=M_APPLY_TYPE
+LName=申請種別マスタ
+Comment=
+TableOption=
+Page=MAIN
+Left=550
+Top=450
+Field="F_ID","F_ID","@INT","NOT NULL",0,"","",$FFFFFFFF,"IDENTITY(1,1)"
+Field="申請種別名","F_NAME","nvarchar(MAX)","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20190619075735
+Position="MAIN",550,450
+
+[Relation]
+Entity1=M_BORAD_TYPE
+Entity2=T_PROJECT
+RelationType1=2
+RelationType2=3
+Fields1=F_ID
+Fields2=F_BORAD_TYPE
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,2008,5185,4856,R,R
+Dependence=0
+Caption=
+PName=
+ModifiedDateTime=20190602184118
+LineMode=0
+Bar1=201
+Bar2=518
+Bar3=486
+TermPos1=R
+TermPos2=R
+
+[Relation]
+Entity1=T_PROJECT
+Entity2=T_ROOT
+RelationType1=2
+RelationType2=4
+Fields1=F_ID
+Fields2=F_PROJECT_ID
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,1443,4589,3072,R,R
+Dependence=0
+Caption=
+PName=
+ModifiedDateTime=20190602184101
+LineMode=0
+Bar1=144
+Bar2=459
+Bar3=307
+TermPos1=R
+TermPos2=R
+
+[Entity]
+PName=M_BORAD_TYPE
+LName=委員会種別マスタ
+Comment=
+TableOption=
+Page=MAIN
+Left=50
+Top=50
+Field="F_ID","F_ID","@INT","NOT NULL",0,"","",$FFFFFFFF,"IDENTITY(1,1)"
+Field="委員会名","F_NAME","nvarchar(MAX)","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20190619075718
+Position="MAIN",50,50
+
+[Entity]
+PName=T_ROOT
+LName=申請
+Comment=
+TableOption=
+Page=MAIN
+Left=850
+Top=250
+Field="F_ID","F_ID","@INT","NOT NULL",0,"","",$FFFFFFFF,"IDENTITY(1,1)"
+Field="研究ID","F_PROJECT_ID","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="研究種別","F_APPLY_TYPE","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="作成者ID","F_CREATE_USER_ID","@INT",,,"","",$FFFFFFFF,""
+Field="作成日","F_CREATE_DATE","@DATE","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20190619075731
+Position="MAIN",850,250,163,139
+
+[Entity]
+PName=T_PROJECT
+LName=研究
+Comment=
+TableOption=
+Page=MAIN
+Left=350
+Top=150
+Field="F_ID","F_ID","@INT","NOT NULL",0,"","",$FFFFFFFF,"IDENTITY(1,1)"
+Field="プロジェクト番号","F_PROJECT_NUMBER","nvarchar(MAX)","NOT NULL",,"","",$FFFFFFFF,""
+Field="委員会種別","F_BORAD_TYPE","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="作成者ID","F_CREATE_USER_ID","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="作成日","F_CREATE_DATE","@DATE","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20190619075727
+Position="MAIN",350,150
+
+[Relation]
+Entity1=M_ROLE
+Entity2=T_USER_ROLE
+RelationType1=2
+RelationType2=3
+Fields1=F_ID
+Fields2=F_ROLE_ID
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,2131,7869,1758,R,R
+Dependence=0
+Caption=
+PName=
+ModifiedDateTime=20190602183435
+LineMode=0
+Bar1=213
+Bar2=787
+Bar3=176
+TermPos1=R
+TermPos2=R
+
+[Entity]
+PName=M_ROLE
+LName=役割
+Comment=
+TableOption=
+Page=MAIN
+Left=1200
+Top=1650
+Field="F_ID","F_ID","@INT","NOT NULL",0,"","",$FFFFFFFF,"IDENTITY(1,1)"
+Field="役割名","F_ROLE_NAME","nvarchar(MAX)","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20190619075812
+Position="MAIN",1200,1650,283,102
+
+[Relation]
+Entity1=T_USER
+Entity2=T_USER_ROLE
+RelationType1=2
+RelationType2=3
+Fields1=F_ID
+Fields2=F_USER_ID
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,806,3869,1815,R,R
+Dependence=1
+Caption=
+PName=
+ModifiedDateTime=20190602183227
+LineMode=0
+Bar1=81
+Bar2=387
+Bar3=182
+TermPos1=R
+TermPos2=R
+
+[Entity]
+PName=T_USER_ROLE
+LName=T_USER_ROLE
+Comment=
+TableOption=
+Page=MAIN
+Left=800
+Top=1750
+Field="F_USER_ID","F_USER_ID","@INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="F_ROLE_ID","F_ROLE_ID","@INT","NOT NULL",1,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20190602183411
+Position="MAIN",800,1750
+
+[Entity]
+PName=T_USER
+LName=T_USER
+Comment=
+TableOption=
+Page=MAIN
+Left=200
+Top=1650
+Field="F_ID","F_ID","@INT","NOT NULL",0,"","",$FFFFFFFF,"IDENTITY(1,1)"
+Field="氏","F_LAST_NAME","nvarchar(MAX)","NOT NULL",,"","",$FFFFFFFF,""
+Field="名","F_FIRST_NAME","nvarchar(MAX)","NOT NULL",,"","",$FFFFFFFF,""
+Field="氏（かな）","F_LAST_NAME_KANA","nvarchar(MAX)","NOT NULL",,"","",$FFFFFFFF,""
+Field="名（かな）","F_FIRST_NAME_KANA","nvarchar(MAX)","NOT NULL",,"","",$FFFFFFFF,""
+Field="メールアドレス","F_EMAIL","nvarchar(MAX)","NOT NULL",,"","",$FFFFFFFF,""
+Field="パスワード","F_PASS","nvarchar(MAX)","NOT NULL",,"","",$FFFFFFFF,""
+Field="作成者ID","F_CREATE_USER_ID","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="更新者ID","F_UPDATE_USER_ID","@INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="更新日","F_UPDATE_DATE","@DATE","NOT NULL",,"","",$FFFFFFFF,""
+Field="作成日","F_CREATE_DATE","@DATE","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20190619075808
+Position="MAIN",200,1650,381,329
