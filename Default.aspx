@@ -72,7 +72,7 @@
 	</div>
 	<hr />
 	<div>
-		<h3>部品化 (User Control) について</h3>
+		<h3>Webユーザーコントロール (部品化) について</h3>
 		<asp:Button Text="移動" ID="Button_UserControl" runat="server" OnClick="Button_UserControl_Click" />
 	</div>
 	<hr />
