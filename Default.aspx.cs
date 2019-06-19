@@ -24,34 +24,34 @@ public partial class _Default : Page
 	protected void Button_NomalControl_Click(object sender, EventArgs e)
 	{
 		// クエリストリングに
-		//string url = "~/YourName/NomalControl.aspx?id=" + Server.UrlEncode(T_APPLY_ENTRY.DataKeys[index].Values["F_ID"].ToString());
-		Response.Redirect("~/YourName/NomalControl.aspx");
+		//string url = "~/kentaro/NomalControl.aspx?id=" + Server.UrlEncode(T_APPLY_ENTRY.DataKeys[index].Values["F_ID"].ToString());
+		Response.Redirect("~/kentaro/NomalControl.aspx");
 	}
 
 	/// <summary>GridViewについて</summary>
 	protected void Button_GridView_Click(object sender, EventArgs e)
 	{
-		Response.Redirect("~/YourName/GridView.aspx");
+		Response.Redirect("~/kentaro/GridView.aspx");
 	}
 
 	/// <summary>UpdatePanelについて</summary>
 	protected void Button_UpdatePanel_Click(object sender, EventArgs e)
 	{
-		Response.Redirect("~/YourName/UpdatePanel.aspx");
+		Response.Redirect("~/kentaro/UpdatePanel.aspx");
 	}
 
 	/// <summary>SESSIONについて</summary>
 	protected void Button_Session_Click(object sender, EventArgs e)
 	{
 		Session["SessionSample"] = TextBox_SessionText.Text;
-		var url = "~/YourName/Session.aspx?QueryStringSample=" + Server.UrlEncode(TextBox_QueryStringText.Text);
+		var url = "~/kentaro/Session.aspx?QueryStringSample=" + Server.UrlEncode(TextBox_QueryStringText.Text);
 		Response.Redirect(url);
 	}
 
 	/// <summary>バリデーションについて</summary>
 	protected void Button_Validation_Click(object sender, EventArgs e)
 	{
-		Response.Redirect("~/YourName/Validation.aspx");
+		Response.Redirect("~/kentaro/Validation.aspx");
 	}
 
 	/// <summary>DB接続について</summary>
@@ -130,31 +130,31 @@ public partial class _Default : Page
 	/// <summary>DB接続について（Select）</summary>
 	protected void Button_DatabaseConnection_Select_Click(object sender, EventArgs e)
 	{
-		Response.Redirect("~/YourName/DatabaseConnectionSelect.aspx");
+		Response.Redirect("~/kentaro/DatabaseConnectionSelect.aspx");
 	}
 
 	/// <summary>DB接続について（Update）</summary>
 	protected void Button_DatabaseConnection_Update_Click(object sender, EventArgs e)
 	{
-		var url = "~/YourName/DatabaseConnectionUpdate.aspx?table=" + Server.UrlEncode(DropDownList1.SelectedValue.ToString());
+		var url = "~/kentaro/DatabaseConnectionUpdate.aspx?table=" + Server.UrlEncode(DropDownList1.SelectedValue.ToString());
 		Response.Redirect(url);
 	}
 	/// <summary>CSSについて</summary>
 	protected void Button_CSS_Click(object sender, EventArgs e)
 	{
-		Response.Redirect("~/YourName/CSS.aspx");
+		Response.Redirect("~/kentaro/CSS.aspx");
 	}
 
 	/// <summary>部品化 (User Control) について</summary>
 	protected void Button_UserControl_Click(object sender, EventArgs e)
 	{
-		Response.Redirect("~/YourName/UserControl.aspx");
+		Response.Redirect("~/kentaro/UserControl.aspx");
 	}
 
 	/// <summary>サンプルプロジェクトへ（ログイン画面）</summary>
 	protected void Button_GotoSampleProject_Click(object sender, EventArgs e)
 	{
-		Response.Redirect("~/YourName/SampleProject/Login.aspx");
+		Response.Redirect("~/kentaro/SampleProject/Login.aspx");
 	}
 
 }

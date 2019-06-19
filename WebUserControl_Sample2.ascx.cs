@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class YourName_WebUserControl_Sample2 : System.Web.UI.UserControl
+public partial class kentaro_WebUserControl_Sample2 : System.Web.UI.UserControl
 {
 	protected void Page_Load(object sender, EventArgs e)
 	{

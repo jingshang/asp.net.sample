@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class YourName_GridView : System.Web.UI.Page
+public partial class kentaro_GridView : System.Web.UI.Page
 {
 	protected void Page_Load(object sender, EventArgs e)
 	{
@@ -22,7 +22,7 @@ public partial class YourName_GridView : System.Web.UI.Page
 
 	protected void ButtonBack_Click(object sender, EventArgs e)
 	{
-		Response.Redirect("~/YourName");
+		Response.Redirect("~/kentaro");
 	}
 	private void UpdateGridView1()
 	{
@@ -37,7 +37,7 @@ public partial class YourName_GridView : System.Web.UI.Page
 		{
 			DataRow row = table.NewRow();
 			row["SAMPLE_CHECK"] = true;
-			row["SAMPLE_URL"] = i==0? "~/YourName/SampleProject/SampleProjectDoc/GridView2.jpg":null;
+			row["SAMPLE_URL"] = i==0? "~/kentaro/SampleProject/SampleProjectDoc/GridView2.jpg":null;
 			row["SAMPLE_TEXT"] = "テキストです";
 			table.Rows.Add(row);
 		}

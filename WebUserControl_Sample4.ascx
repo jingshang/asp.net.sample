@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="WebUserControl_Sample4.ascx.cs" Inherits="YourName_WebUserControl_Sample4" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="WebUserControl_Sample4.ascx.cs" Inherits="kentaro_WebUserControl_Sample4" %>
 <p>
 	Webユーザーコントロール内で選択したUserIdを外に渡す。
 	外ではUserIdを受け取りSelect検索して詳細情報を表示する

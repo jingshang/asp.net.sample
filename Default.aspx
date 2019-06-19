@@ -9,7 +9,7 @@
 	<div>
 		<h3>データの準備</h3>
 		新規にDBを作成し以下のSQLを実行してください。<br />
-		\Sample\YourName\SampleProject\SampleProjectDoc\001.asp_er190609_DLL<br />
+		\Sample\kentaro\SampleProject\SampleProjectDoc\001.asp_er190609_DLL<br />
 		<br />
 		db名やユーザー名パスワードは Web.configに入力する必要があります。<br />
 		「★データベースにログインする情報です。」を参照してください。<br />

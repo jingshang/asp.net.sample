@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="GridView.aspx.cs" Inherits="YourName_GridView" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="GridView.aspx.cs" Inherits="kentaro_GridView" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
 	
@@ -44,7 +44,7 @@
 				<asp:CheckBoxField Text="CheckBoxField" DataField="SAMPLE_CHECK"  />
 				<asp:ButtonField Text="ButtonField" ButtonType="Button"/>
 				<asp:HyperLinkField Text="HyperLinkField" Target="_blank" NavigateUrl="https://yahoo.co.jp"/>
-				<asp:ImageField NullImageUrl="~/YourName/SampleProject/SampleProjectDoc/GridView1.jpg" DataImageUrlField="SAMPLE_URL"></asp:ImageField>
+				<asp:ImageField NullImageUrl="~/kentaro/SampleProject/SampleProjectDoc/GridView1.jpg" DataImageUrlField="SAMPLE_URL"></asp:ImageField>
 				<asp:BoundField DataField="SAMPLE_TEXT" />
 			</Columns>
 		</asp:GridView>
