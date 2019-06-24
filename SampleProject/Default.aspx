@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/kentaro/SampleProject/MasterPage.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="kentaro_SampleProject_Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/kurihara/SampleProject/MasterPage.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="kurihara_SampleProject_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>

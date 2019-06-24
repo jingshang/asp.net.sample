@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class kentaro_WebUserControl_Sample3 : System.Web.UI.UserControl
+public partial class kurihara_WebUserControl_Sample3 : System.Web.UI.UserControl
 {
 	private EventHandler original_event;
 

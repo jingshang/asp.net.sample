@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class kentaro_UserControl : System.Web.UI.Page
+public partial class kurihara_UserControl : System.Web.UI.Page
 {
 	protected void Page_Load(object sender, EventArgs e)
 	{
@@ -18,7 +18,7 @@ public partial class kentaro_UserControl : System.Web.UI.Page
 	}
 	protected void ButtonBack_Click(object sender, EventArgs e)
 	{
-		Response.Redirect("~/kentaro");
+		Response.Redirect("~/kurihara");
 	}
 
 	protected void Button_UserControlSample1_Click(object sender, EventArgs e)

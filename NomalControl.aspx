@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="NomalControl.aspx.cs" Inherits="kentaro_NomalControl" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="NomalControl.aspx.cs" Inherits="kurihara_NomalControl" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
 	
@@ -103,11 +103,11 @@ for( var i = 0; i < text_count; i++){
 		AutoPostBackをtrueにしたのが原因です。<br />
 		こいつをTrueにしてサーバーのイベントを実行しています。<br />
 		サーバーはイベントを処理して、処理した結果のHTMLをブラウザに返してきます。<br />
-		<asp:Image ID="Image_RadioButton41" runat="server" ImageUrl="~/kentaro/SampleProject/SampleProjectDoc/RadioButton4.jpg" />
+		<asp:Image ID="Image_RadioButton41" runat="server" ImageUrl="~/kurihara/SampleProject/SampleProjectDoc/RadioButton4.jpg" />
 		しかし、ラジオボタンを選択するたびにロードされたら見にくいですね。<br />
 		そこでUpdatePanelというもので囲うとその部分の描画だけ更新されます。<br />
 		非同期でサーバーとやり取りする基本的な仕組みです。<br />
-		<asp:Image ID="Image_RadioButton5" runat="server" ImageUrl="~/kentaro/SampleProject/SampleProjectDoc/RadioButton5.jpg" />
+		<asp:Image ID="Image_RadioButton5" runat="server" ImageUrl="~/kurihara/SampleProject/SampleProjectDoc/RadioButton5.jpg" />
 		<br />
 		RadioButtonD_Sample_CheckedChangedメソッドを新たに定義して、自国の表示更新を行うようにしました。<br />
 		今度はUpdatePanelで囲ったので画面全体はロードされません。<br />

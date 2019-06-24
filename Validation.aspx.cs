@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class kentaro_Validation : System.Web.UI.Page
+public partial class kurihara_Validation : System.Web.UI.Page
 {
 	protected void Page_Load(object sender, EventArgs e)
 	{
@@ -17,7 +17,7 @@ public partial class kentaro_Validation : System.Web.UI.Page
 
 	protected void ButtonBack_Click(object sender, EventArgs e)
 	{
-		Response.Redirect("~/kentaro");
+		Response.Redirect("~/kurihara");
 	}
 	protected void Button_UpdatePanel1_Click(object sender, EventArgs e)
 	{

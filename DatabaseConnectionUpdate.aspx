@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="DatabaseConnectionUpdate.aspx.cs" Inherits="kentaro_DatabaseConnectionUpdate" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="DatabaseConnectionUpdate.aspx.cs" Inherits="kurihara_DatabaseConnectionUpdate" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
 	<style>

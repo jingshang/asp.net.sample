@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="UserControl.aspx.cs" Inherits="kentaro_UserControl" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="UserControl.aspx.cs" Inherits="kurihara_UserControl" %>
 
 <%@ Register Src="WebUserControl_Sample1.ascx" TagName="WebUserControl_Sample1" TagPrefix="uc1" %>
 

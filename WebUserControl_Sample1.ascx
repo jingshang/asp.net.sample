@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="WebUserControl_Sample1.ascx.cs" Inherits="kentaro_WebUserControl_Sample1" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="WebUserControl_Sample1.ascx.cs" Inherits="kurihara_WebUserControl_Sample1" %>
 
 
 

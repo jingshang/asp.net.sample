@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class kentaro_SampleProject_Login : System.Web.UI.Page
+public partial class kurihara_SampleProject_Login : System.Web.UI.Page
 {
 	protected void Page_Load(object sender, EventArgs e)
 	{
@@ -16,7 +16,7 @@ public partial class kentaro_SampleProject_Login : System.Web.UI.Page
 
 	protected void ButtonBack_Click(object sender, EventArgs e)
 	{
-		Response.Redirect("~/kentaro");
+		Response.Redirect("~/kurihara");
 	}
 	protected void Button_Login_Click(object sender, EventArgs e)
 	{
@@ -28,7 +28,7 @@ public partial class kentaro_SampleProject_Login : System.Web.UI.Page
 			Session[SessionUserInfo.SESSION_KEY] = SessionUserInfo.GetSessionUserInfo(GetLoginId().Value);
 
 			// Role取得
-			Response.Redirect("~/kentaro/SampleProject/Default.aspx");
+			Response.Redirect("~/kurihara/SampleProject/Default.aspx");
 		}
 	}
 
