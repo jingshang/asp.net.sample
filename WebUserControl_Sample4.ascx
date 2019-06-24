@@ -15,6 +15,4 @@
 		</Columns>
 	</asp:GridView>
 	<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MyConnectionStr %>" SelectCommand="SELECT [F_ID], [F_LAST_NAME], [F_FIRST_NAME] FROM [T_USER]"></asp:SqlDataSource>
-
-
 </div>

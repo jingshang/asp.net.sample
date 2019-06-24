@@ -11,4 +11,14 @@ public partial class kurihara_SampleProject_Default : System.Web.UI.Page
 	{
 
 	}
+
+    protected void ENTRY_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void EDIT_Click(object sender, EventArgs e)
+    {
+
+    }
 }
