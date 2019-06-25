@@ -13,7 +13,7 @@
     <form id="form1" runat="server">
         
         
-	<asp:Button ID="Logout" runat="server" OnClick="Logout_Click" Text="ログアウト" Width="100px" Height="100px" />
+	<asp:Button ID="Logout" runat="server" OnClick="Logout_Click" Text="ログアウト" Width="100px" Height="20px" />
     <div>
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
