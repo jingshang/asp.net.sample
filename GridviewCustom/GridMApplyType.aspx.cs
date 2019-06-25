@@ -57,6 +57,19 @@ public partial class kurihara_GridviewCustom_GridMApplyType : System.Web.UI.Page
 
     protected void M_APPLY_TYPE_Click(object sender, EventArgs e)
     {
-        
+
+        var button = (Button)sender;
+        var row = (GridViewRow)button.Parent.Parent;
+
+        var f_id = GridView1.DataKeys[row.RowIndex].Values["F_ID"].ToString();
+        var f_name = GridView1.DataKeys[row.RowIndex].Values["F_NAME"].ToString();
+
+        F_ID1.Text = f_id;
+        F_NAME1.Text = f_name;
+    }
+
+    protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+
     }
 }

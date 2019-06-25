@@ -138,16 +138,37 @@ public partial class kurihara_GridView : System.Web.UI.Page
 
 	protected void Button_GridView_Click(object sender, EventArgs e)
 	{
-		var button = (Button)sender;
-		var row = (GridViewRow)button.Parent.Parent;
+        // クリックしたボタンが第2引数で取得できます。
+        // 型がobjectなのでButtonにキャストしてます。
+        var button = (Button)sender;
 
-		var f_id = GridView_Sample4.DataKeys[row.RowIndex].Values["F_ID"].ToString();
-		var f_name = GridView_Sample4.DataKeys[row.RowIndex].Values["F_NAME"].ToString();
+        // 次に1行を取得しています。
+        // ボタンの親の親が1行です。
+        // 1行は　GridViewRow　と言います。
+        // 1行取得します
+        // こいつは何行目なのか取得する為だけにキャストしました。
+        var row = (GridViewRow)button.Parent.Parent;
 
-		Label_GridView_Sample4_f_rowindex.Text = row.RowIndex.ToString();
-		Label_GridView_Sample4_f_comment.Text = "Button.OnClick";
-		Label_GridView_Sample4_f_id.Text = f_id;
-		Label_GridView_Sample4_f_name.Text = f_name;
-	}
+
+        // クリックした1行からIDとNameを取得します。
+        // まず id から
+        // 取り方は決まってます。覚えちゃいましょう。
+
+        // ①DataKeysで行番号を指定
+        // ②Valuesで列名を指定
+
+        // 注意点としてはValuesで指定する列名はデザインファイルのGridViewで以下の様に指定しないと取れません
+        // DataKeyNames="F_ID,F_NAME"
+        // 栗原さんのソースだとF_NAMEが抜けてるかな
+        var f_id = GridView_Sample4.DataKeys[row.RowIndex].Values["F_ID"].ToString();
+        var f_name = GridView_Sample4.DataKeys[row.RowIndex].Values["F_NAME"].ToString();
+
+        // さて、あとは適当にラベルにデータを反映しているだけです。
+        // 行とか列とか、F_ID とか F_NAME とか
+        Label_GridView_Sample4_f_rowindex.Text = row.RowIndex.ToString();
+        Label_GridView_Sample4_f_comment.Text = "Button.OnClick";
+        Label_GridView_Sample4_f_id.Text = f_id;
+        Label_GridView_Sample4_f_name.Text = f_name;
+    }
 
 }

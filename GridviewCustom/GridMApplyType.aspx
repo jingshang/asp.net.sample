@@ -11,7 +11,7 @@
 	<form id="form1" runat="server">
 		<div>
 		</div>
-		<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="F_ID" DataSourceID="M_APPLY_TYPE">
+		<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="F_ID,F_NAME" DataSourceID="M_APPLY_TYPE" OnRowCommand="GridView1_RowCommand">
 			<Columns>
 				<asp:TemplateField>
 					<HeaderTemplate>
