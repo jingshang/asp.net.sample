@@ -21,6 +21,18 @@
 <%@ Register src="WebUserControlMModifyType.ascx" tagname="WebUserControlMModifyType" tagprefix="uc7" %>
 
 
+<%@ Register src="WebUserControlMMoneyTransferType.ascx" tagname="WebUserControlMMoneyTransferType" tagprefix="uc8" %>
+
+
+<%@ Register src="WebUserControlMRole.ascx" tagname="WebUserControlMRole" tagprefix="uc9" %>
+
+
+<%@ Register src="WebUserControlSDatabaseVersion.ascx" tagname="WebUserControlSDatabaseVersion" tagprefix="uc10" %>
+
+
+<%@ Register src="WebUserControlSSystemSetting.ascx" tagname="WebUserControlSSystemSetting" tagprefix="uc11" %>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
 	<uc1:WebUserControl_TABLE_NAME ID="WebUserControl_TABLE_NAME1" runat="server" OnOriginalEvent="WebUserControl_TABLE_NAME1_OriginalEvent" />
 	<br />
@@ -137,8 +149,76 @@
 		</table>
 	</div>
 	<hr />
+	<h3>M_MONEY_TRANSFER_TYPE</h3>
+
+	<uc8:WebUserControlMMoneyTransferType ID="WebUserControlMMoneyTransferType1" runat="server" OnOriginalEvent="WebUserControlMMoneyTransferType1_OriginalEvent"/>
+	<div>
+		<table>
+			<tr>
+				<th>F_ID:</th>
+				<td><asp:Label ID="ID_Label5" runat="server" Text=""></asp:Label></td>
+			</tr>
+			<tr>
+				<th>F_NAME:</th>
+				<td><asp:Label ID="NAME_Label5" runat="server" Text=""></asp:Label></td>
+			</tr>
+		</table>
+	</div>
 	<hr />
+	<h3>M_ROLE</h3>
+	<uc9:WebUserControlMRole ID="WebUserControlMRole1" runat="server" OnOriginalEvent="WebUserControlMRole1_OriginalEvent"/>
+	<div>
+		<table>
+			<tr>
+				<th>F_ID:</th>
+				<td><asp:Label ID="ID_Label6" runat="server" Text=""></asp:Label></td>
+			</tr>
+			<tr>
+				<th>F_ROLE_NAME:</th>
+				<td><asp:Label ID="ROLE_NAME" runat="server" Text=""></asp:Label></td>
+			</tr>
+		</table>
+	</div>
 	<hr />
+	<h3>S_SYSTEM_VERSION</h3>
+	<uc10:WebUserControlSDatabaseVersion ID="WebUserControlSDatabaseVersion1" runat="server" OnOriginalEvent="WebUserControlSDatabaseVersion1_OriginalEvent" />
+	<div>
+		<table>
+			<tr>
+				<th>F_ID:</th>
+				<td><asp:Label ID="ID_Label7" runat="server" Text=""></asp:Label></td>
+			</tr>
+			<tr>
+				<th>F_VERSION</th>
+				<td><asp:Label ID="VERSION_Label" runat="server" Text=""></asp:Label></td>
+			</tr>
+			<tr>
+				<th>F_CREATE_DATE</th>
+				<td><asp:Label ID="CREATE_DATE_Label1" runat="server" Text=""></asp:Label></td>
+			</tr>
+		</table>
+	</div>
+	<hr />
+	<h3>S_SYSTEM_SETTING</h3>
+	<p>
+		<uc11:WebUserControlSSystemSetting ID="WebUserControlSSystemSetting1" runat="server" OnOriginalEvent="WebUserControlSSystemSetting1_OriginalEvent"/>
+	</p>
+	<div>
+		<table>
+			<tr>
+				<th>F_ID:</th>
+				<td><asp:Label ID="ID_Label8" runat="server" Text=""></asp:Label></td>
+			</tr>
+			<tr>
+				<th>SETTING1</th>
+				<td><asp:Label ID="SETTING1" runat="server" Text=""></asp:Label></td>
+			</tr>
+			<tr>
+				<th>SETTING2</th>
+				<td><asp:Label ID="SETTING2" runat="server" Text=""></asp:Label></td>
+			</tr>
+		</table>
+	</div>
 	<hr />
 	<hr />
 	<hr />
