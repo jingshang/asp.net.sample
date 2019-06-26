@@ -15,6 +15,12 @@
 <%@ Register src="WebUserControlMFlowType.ascx" tagname="WebUserControlMFlowType" tagprefix="uc5" %>
 
 
+<%@ Register src="WebUserControlMInvasionType.ascx" tagname="WebUserControlMInvasionType" tagprefix="uc6" %>
+
+
+<%@ Register src="WebUserControlMModifyType.ascx" tagname="WebUserControlMModifyType" tagprefix="uc7" %>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
 	<uc1:WebUserControl_TABLE_NAME ID="WebUserControl_TABLE_NAME1" runat="server" OnOriginalEvent="WebUserControl_TABLE_NAME1_OriginalEvent" />
 	<br />
@@ -100,7 +106,36 @@
 		</table>
 	</div>
 	<hr />
+	<h3>F_INVASION_TYPE</h3>
+
+	<uc6:WebUserControlMInvasionType ID="WebUserControlMInvasionType1" runat="server" OnOriginalEvent="WebUserControlMInvasionType1_OriginalEvent"/>
+	<div>
+		<table>
+			<tr>
+				<th>F_ID:</th>
+				<td><asp:Label ID="ID_Label3" runat="server" Text=""></asp:Label></td>
+			</tr>
+			<tr>
+				<th>F_NAME:</th>
+				<td><asp:Label ID="NAME_Label3" runat="server" Text=""></asp:Label></td>
+			</tr>
+		</table>
+	</div>
 	<hr />
+	<h3>M_MODIFY_TYPE</h3>
+	<uc7:WebUserControlMModifyType ID="WebUserControlMModifyType1" runat="server" OnOriginalEvent="WebUserControlMModifyType1_OriginalEvent" />
+	<div>
+		<table>
+			<tr>
+				<th>F_ID:</th>
+				<td><asp:Label ID="ID_Label4" runat="server" Text=""></asp:Label></td>
+			</tr>
+			<tr>
+				<th>F_NAME:</th>
+				<td><asp:Label ID="NAME_Label4" runat="server" Text=""></asp:Label></td>
+			</tr>
+		</table>
+	</div>
 	<hr />
 	<hr />
 	<hr />
