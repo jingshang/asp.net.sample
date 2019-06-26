@@ -20,4 +20,17 @@ public partial class kurihara_UserControlSample_Default : System.Web.UI.Page
         Label_FLOW_ID.Text = "";
         Label_FLOW_NAME.Text = "";
     }
+
+
+    protected void WebUserControl_example11_OriginalEvent1(object sender, EventArgs e)
+    {
+        Label_FLOW_ID.Text ="";
+        Label_FLOW_NAME.Text = "";
+    }
+
+    protected void WebUserControl_Button_Sample_OriginalEvent(object sender, EventArgs e)
+    {
+        Label_FLOW_ID.Text = "";
+        Label_FLOW_NAME.Text = "";
+    }
 }

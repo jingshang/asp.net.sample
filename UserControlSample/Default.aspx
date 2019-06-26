@@ -2,9 +2,22 @@
 
 <%@ Register src="WebUserControl_TABLE_NAME.ascx" tagname="WebUserControl_TABLE_NAME" tagprefix="uc1" %>
 
+<%@ Register src="WebUserControl_example1.ascx" tagname="WebUserControl_example1" tagprefix="uc2" %>
+<%@ Register Src="~/kurihara/UserControlSample/WebUserControl_Button_Sample.ascx" TagPrefix="uc1" TagName="WebUserControl_Button_Sample" %>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
 	<uc1:WebUserControl_TABLE_NAME ID="WebUserControl_TABLE_NAME1" runat="server" OnOriginalEvent="WebUserControl_TABLE_NAME1_OriginalEvent" />
+	<br />
+	<uc2:WebUserControl_example1 ID="WebUserControl_example11" runat="server"  OnOriginalEvent1="WebUserControl_example11_OriginalEvent1"/>
+	<br />
+	<uc1:WebUserControl_Button_Sample runat="server" ID="WebUserControl_Button_Sample" OnOriginalEvent="WebUserControl_Button_Sample_OriginalEvent" />
+	
 
+	
+	<hr />
+	
+	
 
 	
 	<hr />
@@ -27,7 +40,6 @@
 			</table>
 		</div>
 	</div>
-	<hr />
 	<hr />
 	<hr />
 	<hr />
