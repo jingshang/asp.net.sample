@@ -6,6 +6,9 @@
 <%@ Register Src="~/kurihara/UserControlSample/WebUserControl_Button_Sample.ascx" TagPrefix="uc1" TagName="WebUserControl_Button_Sample" %>
 
 
+<%@ Register src="WebUserControlMApplyType.ascx" tagname="WebUserControlMApplyType" tagprefix="uc3" %>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
 	<uc1:WebUserControl_TABLE_NAME ID="WebUserControl_TABLE_NAME1" runat="server" OnOriginalEvent="WebUserControl_TABLE_NAME1_OriginalEvent" />
 	<br />
@@ -41,6 +44,22 @@
 		</div>
 	</div>
 	<hr />
+	<uc3:WebUserControlMApplyType ID="WebUserControlMApplyType1" runat="server" OnOriginalEvent="WebUserControlMApplyType1_OriginalEvent"/>
+
+	<div>
+		<br />
+		<table>
+			<tr>
+				<th>F_ID</th>
+				<td><asp:Label ID="ID_Label" runat="server" Text="" ></asp:Label></td>
+			</tr>
+			<tr>
+				<th>F_NAME</th>
+				<td><asp:Label ID="NAME_Label" runat="server" Text=""></asp:Label></td>
+			</tr>
+		</table>
+
+	</div>
 	<hr />
 	<hr />
 	<hr />
