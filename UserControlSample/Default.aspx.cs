@@ -405,4 +405,114 @@ public partial class kurihara_UserControlSample_Default : System.Web.UI.Page
             con.Dispose();
         }
     }
+
+    protected void WebUserControlTApplyEntry1_OriginalEvent(object sender, EventArgs e)
+    {
+        var args = (GridViewCommandEventArgs)e;
+
+        var index = int.Parse(args.CommandArgument.ToString());
+        var gridview = (GridView)args.CommandSource;
+        var id = int.Parse(gridview.DataKeys[index].Values["F_ID"].ToString());
+
+
+
+        string ConnectionStr = ConfigurationManager.ConnectionStrings["MyConnectionStr"].ConnectionString;
+        SqlConnection con = new SqlConnection(ConnectionStr);
+
+        con.Open();
+        try
+        {
+            // dbデータ取得
+            SqlCommand com1 = new SqlCommand("SELECT * FROM T_APPLY_ENTRY WHERE F_ID = @id", con);
+            com1.Parameters.Add(new SqlParameter("@id", id));
+            SqlDataReader sdr1 = com1.ExecuteReader();
+
+            if (sdr1.Read())
+            {
+
+                ID_Label9.Text = sdr1["F_ID"].ToString();
+                VERSION_Label2.Text = sdr1["F_VERSION"].ToString();
+                TITLE_Label.Text = sdr1["F_TITLE"].ToString();
+                BEGIN_DATE_Label.Text = sdr1["F_BEGIN_DATE"].ToString();
+                END_DATE_Label.Text = sdr1["F_END_DATE"].ToString();
+                COMMENT_Label.Text = sdr1["F_COMMENT"].ToString();
+                IS_INVASION_Label.Text = sdr1["F_IS_INVASION"].ToString();
+                INVASION_TYPE_Label.Text = sdr1["F_INVASION_TYPE"].ToString();
+                INVASION_SEVERE_TEXT_Label.Text = sdr1["F_INVASION_SEVERE_TEXT"].ToString();
+                IS_MONEY_TRANSFER_Label.Text = sdr1["F_IS_MONEY_TRANSFER"].ToString();
+                MONEY_TRANFER_TYPE_Label.Text = sdr1["F_MONEY_TRANSFER_TYPE"].ToString();
+                CREATE_USER_ID_Label.Text = sdr1["F_CREATE_USER_ID"].ToString();
+                UPDATE_USER_ID_Label.Text = sdr1["F_UPDATE_USER_ID"].ToString();
+                CREATE_DATE_Label.Text = sdr1["F_CREATE_DATE"].ToString();
+                UPDATE_DATE_Label.Text = sdr1["F_UPDATE_DATE"].ToString();
+
+            }
+            com1.Dispose();
+        }
+        catch
+        {
+            throw;
+        }
+        finally
+        {
+            con.Close();
+            con.Dispose();
+        }
+    }
+
+    protected void WebUserControlTApplyModify1_OriginalEvent(object sender, EventArgs e)
+    {
+
+        var args = (GridViewCommandEventArgs)e;
+
+        var index = int.Parse(args.CommandArgument.ToString());
+        var gridview = (GridView)args.CommandSource;
+        var id = int.Parse(gridview.DataKeys[index].Values["F_ID"].ToString());
+
+
+
+        string ConnectionStr = ConfigurationManager.ConnectionStrings["MyConnectionStr"].ConnectionString;
+        SqlConnection con = new SqlConnection(ConnectionStr);
+
+        con.Open();
+        try
+        {
+            // dbデータ取得
+            SqlCommand com1 = new SqlCommand("SELECT * FROM T_APPLY_MODIFY WHERE F_ID = @id", con);
+            com1.Parameters.Add(new SqlParameter("@id", id));
+            SqlDataReader sdr1 = com1.ExecuteReader();
+
+            if (sdr1.Read())
+            {
+
+                ID_Label10.Text = sdr1["F_ID"].ToString();
+                VERSION_Label3.Text = sdr1["F_VERSION"].ToString();
+                MODIFY_TYPE_Label.Text = sdr1["F_MODIFY_TYPE"].ToString();
+                TITLE_Label2.Text = sdr1["F_TITLE"].ToString();
+                BEGIN_DATE_Label2.Text = sdr1["F_BEGIN_DATE"].ToString();
+                END_DATE_Label2.Text = sdr1["F_END_DATE"].ToString();
+                COMMENT_Label2.Text = sdr1["F_COMMENT"].ToString();
+                IS_INVASION_Label2.Text = sdr1["F_IS_INVASION"].ToString();
+                INVASION_TYPE_Label2.Text = sdr1["F_INVASION_TYPE"].ToString();
+                INVASION_SEVERE_TEXT_Label2.Text = sdr1["F_INVASION_SEVERE_TEXT"].ToString();
+                IS_MONEY_TRANSFER_Label2.Text = sdr1["F_IS_MONEY_TRANSFER"].ToString();
+                MONEY_TRANSFER_TYPE_Label2.Text = sdr1["F_MONEY_TRANSFER_TYPE"].ToString();
+                CREATE_USER_ID_Label2.Text = sdr1["F_CREATE_USER_ID"].ToString();
+                UPDATE_USER_ID_Label2.Text = sdr1["F_UPDATE_USER_ID"].ToString();
+                CREATE_DATE_Label2.Text = sdr1["F_CREATE_DATE"].ToString();
+                UPDATE_DATE_Label2.Text = sdr1["F_UPDATE_DATE"].ToString();
+
+            }
+            com1.Dispose();
+        }
+        catch
+        {
+            throw;
+        }
+        finally
+        {
+            con.Close();
+            con.Dispose();
+        }
+    }
 }
