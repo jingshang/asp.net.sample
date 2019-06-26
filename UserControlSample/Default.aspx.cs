@@ -515,4 +515,327 @@ public partial class kurihara_UserControlSample_Default : System.Web.UI.Page
             con.Dispose();
         }
     }
+
+    protected void WebUserControlTFlow1_OriginalEvent(object sender, EventArgs e)
+    {
+        var args = (GridViewCommandEventArgs)e;
+
+        var index = int.Parse(args.CommandArgument.ToString());
+        var gridview = (GridView)args.CommandSource;
+        var number = int.Parse(gridview.DataKeys[index].Values["F_NUMBER"].ToString());
+
+
+
+        string ConnectionStr = ConfigurationManager.ConnectionStrings["MyConnectionStr"].ConnectionString;
+        SqlConnection con = new SqlConnection(ConnectionStr);
+
+        con.Open();
+        try
+        {
+            // dbデータ取得
+            SqlCommand com1 = new SqlCommand("SELECT * FROM T_FLOW WHERE F_NUMBER = @number", con);
+            com1.Parameters.Add(new SqlParameter("@number", number));
+            SqlDataReader sdr1 = com1.ExecuteReader();
+
+            if (sdr1.Read())
+            {
+
+                ID_Label11.Text = sdr1["F_ID"].ToString();
+                NUMBER_Label.Text = sdr1["F_NUMBER"].ToString();
+                FLOW_TYPE_Label.Text = sdr1["F_FLOW_TYPE"].ToString();
+                CREATE_USER_ID_Label3.Text = sdr1["F_CREATE_USER_ID"].ToString();
+                CREATE_DATE_Label3.Text = sdr1["F_CREATE_DATE"].ToString();
+     
+
+            }
+            com1.Dispose();
+        }
+        catch
+        {
+            throw;
+        }
+        finally
+        {
+            con.Close();
+            con.Dispose();
+        }
+    }
+
+    protected void WebUserControlTLoginHistory1_OriginalEvent(object sender, EventArgs e)
+    {
+        var args = (GridViewCommandEventArgs)e;
+
+        var index = int.Parse(args.CommandArgument.ToString());
+        var gridview = (GridView)args.CommandSource;
+        var id = int.Parse(gridview.DataKeys[index].Values["F_ID"].ToString());
+
+
+
+        string ConnectionStr = ConfigurationManager.ConnectionStrings["MyConnectionStr"].ConnectionString;
+        SqlConnection con = new SqlConnection(ConnectionStr);
+
+        con.Open();
+        try
+        {
+            // dbデータ取得
+            SqlCommand com1 = new SqlCommand("SELECT * FROM T_LOGIN_HISTORY WHERE F_ID = @id", con);
+            com1.Parameters.Add(new SqlParameter("@id", id));
+            SqlDataReader sdr1 = com1.ExecuteReader();
+
+            if (sdr1.Read())
+            {
+
+                ID_Label12.Text = sdr1["F_ID"].ToString();
+                INPUT_MAIL_Label.Text = sdr1["F_INPUT_MAIL"].ToString();
+                LOGIN_RESULT_Label.Text = sdr1["F_LOGIN_RESULT"].ToString();
+                IP_Label.Text = sdr1["F_IP"].ToString();
+                CREATE_DATE_Label4.Text = sdr1["F_CREATE_DATE"].ToString();
+
+
+            }
+            com1.Dispose();
+        }
+        catch
+        {
+            throw;
+        }
+        finally
+        {
+            con.Close();
+            con.Dispose();
+        }
+    }
+
+    protected void WebUserControlTProject1_OriginalEvent(object sender, EventArgs e)
+    {
+        var args = (GridViewCommandEventArgs)e;
+
+        var index = int.Parse(args.CommandArgument.ToString());
+        var gridview = (GridView)args.CommandSource;
+        var id = int.Parse(gridview.DataKeys[index].Values["F_ID"].ToString());
+
+
+
+        string ConnectionStr = ConfigurationManager.ConnectionStrings["MyConnectionStr"].ConnectionString;
+        SqlConnection con = new SqlConnection(ConnectionStr);
+
+        con.Open();
+        try
+        {
+            // dbデータ取得
+            SqlCommand com1 = new SqlCommand("SELECT * FROM T_PROJECT WHERE F_ID = @id", con);
+            com1.Parameters.Add(new SqlParameter("@id", id));
+            SqlDataReader sdr1 = com1.ExecuteReader();
+
+            if (sdr1.Read())
+            {
+
+                ID_Label13.Text = sdr1["F_ID"].ToString();
+                PROJECT_NUMBER_Label.Text = sdr1["F_PROJECT_NUMBER"].ToString();
+                BORAD_TYPE_Label.Text = sdr1["F_BORAD_TYPE"].ToString();
+                CREATE_USER_ID_Label4.Text = sdr1["F_CREATE_USER_ID"].ToString();
+                CREATE_DATE_Label5.Text = sdr1["F_CREATE_DATE"].ToString();
+
+
+            }
+            com1.Dispose();
+        }
+        catch
+        {
+            throw;
+        }
+        finally
+        {
+            con.Close();
+            con.Dispose();
+        }
+    }
+
+    protected void WebUserControlTRoot1_OriginalEvent(object sender, EventArgs e)
+    {
+        var args = (GridViewCommandEventArgs)e;
+
+        var index = int.Parse(args.CommandArgument.ToString());
+        var gridview = (GridView)args.CommandSource;
+        var id = int.Parse(gridview.DataKeys[index].Values["F_ID"].ToString());
+
+
+
+        string ConnectionStr = ConfigurationManager.ConnectionStrings["MyConnectionStr"].ConnectionString;
+        SqlConnection con = new SqlConnection(ConnectionStr);
+
+        con.Open();
+        try
+        {
+            // dbデータ取得
+            SqlCommand com1 = new SqlCommand("SELECT * FROM T_ROOT WHERE F_ID = @id", con);
+            com1.Parameters.Add(new SqlParameter("@id", id));
+            SqlDataReader sdr1 = com1.ExecuteReader();
+
+            if (sdr1.Read())
+            {
+
+                ID_Label14.Text = sdr1["F_ID"].ToString();
+                PROJECT_ID_Label.Text = sdr1["F_PROJECT_ID"].ToString();
+                APPLY_TYPE_Label.Text = sdr1["F_APPLY_TYPE"].ToString();
+                CREATE_USER_ID_Label5.Text = sdr1["F_CREATE_USER_ID"].ToString();
+                CREATE_DATE_Label6.Text = sdr1["F_CREATE_DATE"].ToString();
+
+
+            }
+            com1.Dispose();
+        }
+        catch
+        {
+            throw;
+        }
+        finally
+        {
+            con.Close();
+            con.Dispose();
+        }
+    }
+
+    protected void WebUserControlTUser1_OriginalEvent(object sender, EventArgs e)
+    {
+        var args = (GridViewCommandEventArgs)e;
+
+        var index = int.Parse(args.CommandArgument.ToString());
+        var gridview = (GridView)args.CommandSource;
+        var id = int.Parse(gridview.DataKeys[index].Values["F_ID"].ToString());
+
+
+
+        string ConnectionStr = ConfigurationManager.ConnectionStrings["MyConnectionStr"].ConnectionString;
+        SqlConnection con = new SqlConnection(ConnectionStr);
+
+        con.Open();
+        try
+        {
+            // dbデータ取得
+            SqlCommand com1 = new SqlCommand("SELECT * FROM T_USER WHERE F_ID = @id", con);
+            com1.Parameters.Add(new SqlParameter("@id", id));
+            SqlDataReader sdr1 = com1.ExecuteReader();
+
+            if (sdr1.Read())
+            {
+
+                ID_Label15.Text = sdr1["F_ID"].ToString();
+                LAST_NAME_Label.Text = sdr1["F_LAST_NAME"].ToString();
+                FIRST_NAME_Label.Text = sdr1["F_FIRST_NAME"].ToString();
+                LAST_NAME_K_Label.Text = sdr1["F_LAST_NAME_KANA"].ToString();
+                FIRST_NAME_K_Label.Text = sdr1["F_FIRST_NAME_KANA"].ToString();
+                EMAIL_Label.Text = sdr1["F_EMAIL"].ToString();
+                PASS_Label.Text = sdr1["F_PASS"].ToString();
+                CREATE_USER_ID_Label6.Text = sdr1["F_CREATE_USER_ID"].ToString();
+                UPDATE_USER_ID_Label3.Text = sdr1["F_UPDATE_USER_ID"].ToString();
+                UPDATE_DATE_Label3.Text = sdr1["F_UPDATE_DATE"].ToString();
+                CREATE_DATE_Label7.Text = sdr1["F_CREATE_DATE"].ToString();
+
+
+            }
+            com1.Dispose();
+        }
+        catch
+        {
+            throw;
+        }
+        finally
+        {
+            con.Close();
+            con.Dispose();
+        }
+    }
+
+    protected void WebUserControlTUserEntry1_OriginalEvent(object sender, EventArgs e)
+    {
+        var args = (GridViewCommandEventArgs)e;
+
+        var index = int.Parse(args.CommandArgument.ToString());
+        var gridview = (GridView)args.CommandSource;
+        var id = int.Parse(gridview.DataKeys[index].Values["F_ID"].ToString());
+
+
+
+        string ConnectionStr = ConfigurationManager.ConnectionStrings["MyConnectionStr"].ConnectionString;
+        SqlConnection con = new SqlConnection(ConnectionStr);
+
+        con.Open();
+        try
+        {
+            // dbデータ取得
+            SqlCommand com1 = new SqlCommand("SELECT * FROM T_USER_ENTRY WHERE F_ID = @id", con);
+            com1.Parameters.Add(new SqlParameter("@id", id));
+            SqlDataReader sdr1 = com1.ExecuteReader();
+
+            if (sdr1.Read())
+            {
+
+                ID_Label16.Text = sdr1["F_ID"].ToString();
+                LAST_NAME_Label2.Text = sdr1["F_LAST_NAME"].ToString();
+                FIRST_NAME_Label2.Text = sdr1["F_FIRST_NAME"].ToString();
+                LAST_NAME_K_Label2.Text = sdr1["F_LAST_NAME_KANA"].ToString();
+                FIRST_NAME_K_Label2.Text = sdr1["F_FIRST_NAME_KANA"].ToString();
+                EMAIL_Label2.Text = sdr1["F_EMAIL"].ToString();
+                PASS_Label2.Text = sdr1["F_PASS"].ToString();
+                CREATE_USER_ID_Label7.Text = sdr1["F_CREATE_USER_ID"].ToString();
+                UPDATE_USER_ID_Label4.Text = sdr1["F_UPDATE_USER_ID"].ToString();
+                UPDATE_DATE_Label4.Text = sdr1["F_UPDATE_DATE"].ToString();
+                CREATE_DATE_Label8.Text = sdr1["F_CREATE_DATE"].ToString();
+
+
+            }
+            com1.Dispose();
+        }
+        catch
+        {
+            throw;
+        }
+        finally
+        {
+            con.Close();
+            con.Dispose();
+        }
+    }
+
+    protected void WebUserControlTUserRole1_OriginalEvent(object sender, EventArgs e)
+    {
+        var args = (GridViewCommandEventArgs)e;
+
+        var index = int.Parse(args.CommandArgument.ToString());
+        var gridview = (GridView)args.CommandSource;
+        var id = int.Parse(gridview.DataKeys[index].Values["F_USER_ID"].ToString());
+
+
+
+        string ConnectionStr = ConfigurationManager.ConnectionStrings["MyConnectionStr"].ConnectionString;
+        SqlConnection con = new SqlConnection(ConnectionStr);
+
+        con.Open();
+        try
+        {
+            // dbデータ取得
+            SqlCommand com1 = new SqlCommand("SELECT * FROM T_USER_ROLE WHERE F_USER_ID = @user_id", con);
+            com1.Parameters.Add(new SqlParameter("@user_id", id));
+            SqlDataReader sdr1 = com1.ExecuteReader();
+
+            if (sdr1.Read())
+            {
+
+                USER_ID_Label.Text = sdr1["F_USER_ID"].ToString();
+                ROLE_ID_Label.Text = sdr1["F_ROLE_ID"].ToString();
+                
+            }
+            com1.Dispose();
+        }
+        catch
+        {
+            throw;
+        }
+        finally
+        {
+            con.Close();
+            con.Dispose();
+        }
+    }
 }

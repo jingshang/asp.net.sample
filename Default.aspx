@@ -85,4 +85,8 @@
 		<h3>サンプルプロジェクトへ（ログイン画面）</h3>
 		<asp:Button Text="移動" ID="Button_GotoSampleProject" runat="server" OnClick="Button_GotoSampleProject_Click" />
 	</div>
+	<div>
+		<h3>ユーザーコントロール練習画面へ</h3>
+		<asp:Button Text="移動" ID="Button_GotoUserControlPractice" runat="server" OnClick="Button_GotoUserControlPractice_Click" />
+	</div>
 </asp:Content>

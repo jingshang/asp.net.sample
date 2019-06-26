@@ -36,10 +36,29 @@
 <%@ Register Src="WebUserControlTApplyEntry.ascx" TagName="WebUserControlTApplyEntry" TagPrefix="uc12" %>
 
 
-<%@ Register src="WebUserControlTApplyModify.ascx" tagname="WebUserControlTApplyModify" tagprefix="uc13" %>
+<%@ Register Src="WebUserControlTApplyModify.ascx" TagName="WebUserControlTApplyModify" TagPrefix="uc13" %>
 
+
+<%@ Register Src="WebUserControlTFlow.ascx" TagName="WebUserControlTFlow" TagPrefix="uc14" %>
+
+
+<%@ Register Src="WebUserControlTLoginHistory.ascx" TagName="WebUserControlTLoginHistory" TagPrefix="uc15" %>
+
+
+<%@ Register Src="WebUserControlTProject.ascx" TagName="WebUserControlTProject" TagPrefix="uc16" %>
+
+
+<%@ Register Src="WebUserControlTRoot.ascx" TagName="WebUserControlTRoot" TagPrefix="uc17" %>
+
+
+<%@ Register Src="WebUserControlTUser.ascx" TagName="WebUserControlTUser" TagPrefix="uc18" %>
+
+<%@ Register src="WebUserControlTUserEntry.ascx" tagname="WebUserControlTUserEntry" tagprefix="uc19" %>
+
+<%@ Register src="WebUserControlTUserRole.ascx" tagname="WebUserControlTUserRole" tagprefix="uc20" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="Server">
+
 	<uc1:WebUserControl_TABLE_NAME ID="WebUserControl_TABLE_NAME1" runat="server" OnOriginalEvent="WebUserControl_TABLE_NAME1_OriginalEvent" />
 	<br />
 	<uc2:WebUserControl_example1 ID="WebUserControl_example11" runat="server" OnOriginalEvent1="WebUserControl_example11_OriginalEvent1" />
@@ -333,7 +352,7 @@
 	<hr />
 	<h3>T_APPLY_MODIFY</h3>
 
-	<uc13:WebUserControlTApplyModify ID="WebUserControlTApplyModify1" runat="server" OnOriginalEvent="WebUserControlTApplyModify1_OriginalEvent"/>
+	<uc13:WebUserControlTApplyModify ID="WebUserControlTApplyModify1" runat="server" OnOriginalEvent="WebUserControlTApplyModify1_OriginalEvent" />
 	<div>
 		<table>
 			<tr>
@@ -348,7 +367,8 @@
 			</tr>
 			<tr>
 				<th>F_MODIFY_TYPE</th>
-				<td><asp:Label ID="MODIFY_TYPE_Label" runat="server" Text=""></asp:Label></td>
+				<td>
+					<asp:Label ID="MODIFY_TYPE_Label" runat="server" Text=""></asp:Label></td>
 			</tr>
 			<tr>
 				<th>F_TITLE:</th>
@@ -417,6 +437,287 @@
 			</tr>
 		</table>
 	</div>
+	<hr />
+	<h3>T_FLOW</h3>
+
+	<uc14:WebUserControlTFlow ID="WebUserControlTFlow1" runat="server" OnOriginalEvent="WebUserControlTFlow1_OriginalEvent" />
+	<div>
+		<table>
+			<tr>
+				<th>F_ID:</th>
+				<td>
+					<asp:Label ID="ID_Label11" runat="server" Text=""></asp:Label></td>
+			</tr>
+			<tr>
+				<th>F_NUMBER:</th>
+				<td>
+					<asp:Label ID="NUMBER_Label" runat="server" Text=""></asp:Label></td>
+			</tr>
+			<tr>
+				<th>F_FLOW_TYPE:</th>
+				<td>
+					<asp:Label ID="FLOW_TYPE_Label" runat="server" Text=""></asp:Label></td>
+			</tr>
+			<tr>
+				<th>F_CREATE_USER_ID:</th>
+				<td>
+					<asp:Label ID="CREATE_USER_ID_Label3" runat="server" Text=""></asp:Label></td>
+			</tr>
+			<tr>
+				<th>F_CREATE_DATE:</th>
+				<td>
+					<asp:Label ID="CREATE_DATE_Label3" runat="server" Text=""></asp:Label></td>
+			</tr>
+		</table>
+	</div>
+
+	<hr />
+	<h3>T_LOGIN_HISTORY</h3>
+	<uc15:WebUserControlTLoginHistory ID="WebUserControlTLoginHistory1" runat="server" OnOriginalEvent="WebUserControlTLoginHistory1_OriginalEvent" />
+	<div>
+		<table>
+			<tr>
+				<th>F_ID:</th>
+				<td>
+					<asp:Label ID="ID_Label12" runat="server" Text=""></asp:Label></td>
+			</tr>
+			<tr>
+				<th>F_INPUT_MAIL</th>
+				<td>
+					<asp:Label ID="INPUT_MAIL_Label" runat="server" Text=""></asp:Label></td>
+			</tr>
+			<tr>
+				<th>F_LOGIN_RESULT:</th>
+				<td>
+					<asp:Label ID="LOGIN_RESULT_Label" runat="server" Text=""></asp:Label></td>
+			</tr>
+			<tr>
+				<th>F_IP:</th>
+				<td>
+					<asp:Label ID="IP_Label" runat="server" Text=""></asp:Label></td>
+			</tr>
+			<tr>
+				<th>F_CREATE_DATE:</th>
+				<td>
+					<asp:Label ID="CREATE_DATE_Label4" runat="server" Text=""></asp:Label></td>
+			</tr>
+		</table>
+	</div>
+	<hr />
+	<h3>T_PROJECT</h3>
+
+	<uc16:WebUserControlTProject ID="WebUserControlTProject1" runat="server" OnOriginalEvent="WebUserControlTProject1_OriginalEvent" />
+	<div>
+		<table>
+			<tr>
+				<th>F_ID:</th>
+				<td>
+					<asp:Label ID="ID_Label13" runat="server" Text=""></asp:Label></td>
+			</tr>
+			<tr>
+				<th>F_PROJECT_NUMBER:</th>
+				<td>
+					<asp:Label ID="PROJECT_NUMBER_Label" runat="server" Text=""></asp:Label></td>
+			</tr>
+			<tr>
+				<th>F_BORAD_TYPE:</th>
+				<td>
+					<asp:Label ID="BORAD_TYPE_Label" runat="server" Text=""></asp:Label></td>
+			</tr>
+			<tr>
+				<th>F_CREATE_USER_ID:</th>
+				<td>
+					<asp:Label ID="CREATE_USER_ID_Label4" runat="server" Text=""></asp:Label></td>
+			</tr>
+			<tr>
+				<th>F_CREATE_DATE:</th>
+				<td>
+					<asp:Label ID="CREATE_DATE_Label5" runat="server" Text=""></asp:Label></td>
+			</tr>
+		</table>
+	</div>
+	<hr />
+	<h3>T_ROOT</h3>
+
+	<uc17:WebUserControlTRoot ID="WebUserControlTRoot1" runat="server" OnOriginalEvent="WebUserControlTRoot1_OriginalEvent" />
+	<div>
+		<table>
+			<tr>
+				<th>F_ID:</th>
+				<td>
+					<asp:Label ID="ID_Label14" runat="server" Text=""></asp:Label></td>
+			</tr>
+			<tr>
+				<th>F_PROJECT_ID</th>
+				<td>
+					<asp:Label ID="PROJECT_ID_Label" runat="server" Text=""></asp:Label></td>
+			</tr>
+			<tr>
+				<th>F_APPLY_TYPE:</th>
+				<td>
+					<asp:Label ID="APPLY_TYPE_Label" runat="server" Text=""></asp:Label></td>
+			</tr>
+			<tr>
+				<th>F_CREATE_USER_ID:</th>
+				<td>
+					<asp:Label ID="CREATE_USER_ID_Label5" runat="server" Text=""></asp:Label></td>
+			</tr>
+			<tr>
+				<th>F_CREATE_DATE:</th>
+				<td>
+					<asp:Label ID="CREATE_DATE_Label6" runat="server" Text=""></asp:Label></td>
+			</tr>
+		</table>
+	</div>
+	<hr />
+	
+		<h3>T_USER</h3>
+
+		<uc18:WebUserControlTUser ID="WebUserControlTUser1" runat="server" OnOriginalEvent="WebUserControlTUser1_OriginalEvent" />
+		<div>
+			<table>
+				<tr>
+					<th>F_ID:</th>
+					<td>
+						<asp:Label ID="ID_Label15" runat="server" Text=""></asp:Label></td>
+				</tr>
+				<tr>
+					<th>F_LAST_NAME</th>
+					<td>
+						<asp:Label ID="LAST_NAME_Label" runat="server" Text=""></asp:Label></td>
+				</tr>
+				<tr>
+					<th>F_FIRST_NAME:</th>
+					<td>
+						<asp:Label ID="FIRST_NAME_Label" runat="server" Text=""></asp:Label></td>
+				</tr>
+				<tr>
+					<th>F_LAST_NAME_KANA:</th>
+					<td>
+						<asp:Label ID="LAST_NAME_K_Label" runat="server" Text=""></asp:Label></td>
+				</tr>
+				<tr>
+					<th>F_FIREST_NAME_KANA:</th>
+					<td>
+						<asp:Label ID="FIRST_NAME_K_Label" runat="server" Text=""></asp:Label></td>
+				</tr>
+				<tr>
+					<th>F_EMAIL</th>
+					<td>
+						<asp:Label ID="EMAIL_Label" runat="server" Text=""></asp:Label></td>
+				</tr>
+				<tr>
+					<th>F_PASS:</th>
+					<td>
+						<asp:Label ID="PASS_Label" runat="server" Text=""></asp:Label></td>
+				</tr>
+				<tr>
+					<th>F_CREATE_USER_ID:</th>
+					<td>
+						<asp:Label ID="CREATE_USER_ID_Label6" runat="server" Text=""></asp:Label></td>
+				</tr>
+				<tr>
+					<th>F_UPDATE_USER_ID:</th>
+					<td>
+						<asp:Label ID="UPDATE_USER_ID_Label3" runat="server" Text=""></asp:Label></td>
+				</tr>
+				<tr>
+					<th>F_UPDATE_DATE:</th>
+					<td>
+						<asp:Label ID="UPDATE_DATE_Label3" runat="server" Text=""></asp:Label></td>
+				</tr>
+				<tr>
+					<th>F_CREATE_DATE:</th>
+					<td>
+						<asp:Label ID="CREATE_DATE_Label7" runat="server" Text=""></asp:Label></td>
+				</tr>
+			</table>
+		</div>
+	<hr />
+	<h3>T_USER_ENTRY</h3>
+
+	<uc19:WebUserControlTUserEntry ID="WebUserControlTUserEntry1" runat="server" OnOriginalEvent="WebUserControlTUserEntry1_OriginalEvent" />
+	<div>
+			<table>
+				<tr>
+					<th>F_ID:</th>
+					<td>
+						<asp:Label ID="ID_Label16" runat="server" Text=""></asp:Label></td>
+				</tr>
+				<tr>
+					<th>F_LAST_NAME</th>
+					<td>
+						<asp:Label ID="LAST_NAME_Label2" runat="server" Text=""></asp:Label></td>
+				</tr>
+				<tr>
+					<th>F_FIRST_NAME:</th>
+					<td>
+						<asp:Label ID="FIRST_NAME_Label2" runat="server" Text=""></asp:Label></td>
+				</tr>
+				<tr>
+					<th>F_LAST_NAME_KANA:</th>
+					<td>
+						<asp:Label ID="LAST_NAME_K_Label2" runat="server" Text=""></asp:Label></td>
+				</tr>
+				<tr>
+					<th>F_FIREST_NAME_KANA:</th>
+					<td>
+						<asp:Label ID="FIRST_NAME_K_Label2" runat="server" Text=""></asp:Label></td>
+				</tr>
+				<tr>
+					<th>F_EMAIL</th>
+					<td>
+						<asp:Label ID="EMAIL_Label2" runat="server" Text=""></asp:Label></td>
+				</tr>
+				<tr>
+					<th>F_PASS:</th>
+					<td>
+						<asp:Label ID="PASS_Label2" runat="server" Text=""></asp:Label></td>
+				</tr>
+				<tr>
+					<th>F_CREATE_USER_ID:</th>
+					<td>
+						<asp:Label ID="CREATE_USER_ID_Label7" runat="server" Text=""></asp:Label></td>
+				</tr>
+				<tr>
+					<th>F_UPDATE_USER_ID:</th>
+					<td>
+						<asp:Label ID="UPDATE_USER_ID_Label4" runat="server" Text=""></asp:Label></td>
+				</tr>
+				<tr>
+					<th>F_UPDATE_DATE:</th>
+					<td>
+						<asp:Label ID="UPDATE_DATE_Label4" runat="server" Text=""></asp:Label></td>
+				</tr>
+				<tr>
+					<th>F_CREATE_DATE:</th>
+					<td>
+						<asp:Label ID="CREATE_DATE_Label8" runat="server" Text=""></asp:Label></td>
+				</tr>
+			</table>
+		</div>
+	<hr />
+	<h3>T_USER_ROLE:</h3>
+
+	
+
+	<uc20:WebUserControlTUserRole ID="WebUserControlTUserRole1" runat="server" OnOriginalEvent="WebUserControlTUserRole1_OriginalEvent"/>
+	<div>
+		<table>
+			<tr>
+				<th>F_USER_ID:</th>
+				<td><asp:Label ID="USER_ID_Label" runat="server" Text=""></asp:Label></td>
+			</tr>
+			<tr>
+				<th>F_ROLE_ID:</th>
+				<td><asp:Label ID="ROLE_ID_Label" runat="server" Text=""></asp:Label></td>
+			</tr>
+		</table>
+	</div>
+	
+
+	<hr />
+	<hr />
 	<hr />
 	<hr />
 	<hr />

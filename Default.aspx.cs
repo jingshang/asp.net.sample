@@ -157,4 +157,9 @@ public partial class _Default : Page
 		Response.Redirect("~/kurihara/SampleProject/Login.aspx");
 	}
 
+
+    protected void Button_GotoUserControlPractice_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/kurihara/UserControlSample/Default.aspx");
+    }
 }
