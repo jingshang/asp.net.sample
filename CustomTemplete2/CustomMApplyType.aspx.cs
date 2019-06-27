@@ -32,7 +32,7 @@ public partial class kurihara_CustomTemplete2_CustomMApplyType : System.Web.UI.P
                 table1.Rows.Add(row);
             }
             this.M_APPLY_TYPE.DataSource = table1;
-            this.M_APPLY_TYPE.DataKeyNames = new string[2] { "F_ID", "F_NAME" };
+            this.M_APPLY_TYPE.DataKeyNames = new string[1] { "BIND_F_ID" };
             this.M_APPLY_TYPE.DataBind();
             sdr1.Close();
         }
@@ -48,17 +48,46 @@ public partial class kurihara_CustomTemplete2_CustomMApplyType : System.Web.UI.P
     }
 
 
-    protected void Select_Click(object sender, EventArgs e)
+    
+
+    protected void M_APPLY_TYPE_RowCommand(object sender, GridViewCommandEventArgs e)
     {
-        var button = (Button)sender;
-        var row = (GridViewRow)button.Parent.Parent;
+        var args = (GridViewCommandEventArgs)e;
 
-        var f_id = M_APPLY_TYPE.DataKeys[row.RowIndex].Values["F_ID"].ToString();
-        var f_name = M_APPLY_TYPE.DataKeys[row.RowIndex].Values["F_NAME"].ToString();
+        var index = int.Parse(args.CommandArgument.ToString());
+        var gridview = (GridView)args.CommandSource;
+        var id = int.Parse(gridview.DataKeys[index].Values["BIND_F_ID"].ToString());
 
-        F_ID1.Text = f_id;
-        F_NAME1.Text = f_name;
+
+
+        string ConnectionStr = ConfigurationManager.ConnectionStrings["MyConnectionStr"].ConnectionString;
+        SqlConnection con = new SqlConnection(ConnectionStr);
+
+        con.Open();
+        try
+        {
+            // dbデータ取得
+            SqlCommand com = new SqlCommand("SELECT * FROM M_APPLY_TYPE WHERE F_ID = @id", con);
+            com.Parameters.Add(new SqlParameter("@id", id));
+            SqlDataReader sdr = com.ExecuteReader();
+
+            if (sdr.Read())
+            {
+
+                ID.Text = sdr["F_ID"].ToString();
+                NAME.Text = sdr["F_NAME"].ToString();
+
+            }
+            com.Dispose();
+        }
+        catch
+        {
+            throw;
+        }
+        finally
+        {
+            con.Close();
+            con.Dispose();
+        }
     }
-
-        
 }
