@@ -10,11 +10,11 @@
 <body>
 	<form id="form1" runat="server">
 		<div>
-			<asp:GridView runat="server" ID="M_APPLY_TYPE" AutoGenerateColumns="false" OnRowCommand="M_APPLY_TYPE_RowCommand">
+			<asp:GridView runat="server" ID="M_APPLY_TYPE" AutoGenerateColumns="false" >
 				<Columns>
 					<asp:TemplateField>
 						<ItemTemplate>
-							<asp:Button ID="Select" Text="選択" runat="server" CommandName="SELECT" />
+							<asp:Button ID="Select" Text="選択" runat="server" OnClick="Select_Click" />
 						</ItemTemplate>
 					</asp:TemplateField>
 					<asp:TemplateField>
