@@ -52,42 +52,13 @@ public partial class kurihara_CustomTemplete2_CustomMApplyType : System.Web.UI.P
 
     protected void M_APPLY_TYPE_RowCommand(object sender, GridViewCommandEventArgs e)
     {
-        var args = (GridViewCommandEventArgs)e;
+        var button = (Button)sender;
+        var row = (GridViewRow)button.Parent.Parent;
 
-        var index = int.Parse(args.CommandArgument.ToString());
-        var gridview = (GridView)args.CommandSource;
-        var id = int.Parse(gridview.DataKeys[index].Values["BIND_F_ID"].ToString());
+        var f_id = M_APPLY_TYPE.DataKeys[row.RowIndex].Values["F_ID"].ToString();
+        var f_name = M_APPLY_TYPE.DataKeys[row.RowIndex].Values["F_NAME"].ToString();
 
-
-
-        string ConnectionStr = ConfigurationManager.ConnectionStrings["MyConnectionStr"].ConnectionString;
-        SqlConnection con = new SqlConnection(ConnectionStr);
-
-        con.Open();
-        try
-        {
-            // dbデータ取得
-            SqlCommand com = new SqlCommand("SELECT * FROM M_APPLY_TYPE WHERE F_ID = @id", con);
-            com.Parameters.Add(new SqlParameter("@id", id));
-            SqlDataReader sdr = com.ExecuteReader();
-
-            if (sdr.Read())
-            {
-
-                ID.Text = sdr["F_ID"].ToString();
-                NAME.Text = sdr["F_NAME"].ToString();
-
-            }
-            com.Dispose();
-        }
-        catch
-        {
-            throw;
-        }
-        finally
-        {
-            con.Close();
-            con.Dispose();
-        }
+        ID.Text = f_id;
+        NAME.Text = f_name;
     }
 }
