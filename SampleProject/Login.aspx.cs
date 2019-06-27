@@ -25,7 +25,7 @@ public partial class kurihara_SampleProject_Login : System.Web.UI.Page
 			// 本サンプルではSession["LoginId"]に値が存在することをLogin済みとします。
 			// 実際は用意された認証の仕組みを使用しますが、通常の現場では導入済みであることが多いので
 			// 今回はセッションを利用する感覚を覚えるという事で割り切ってください
-			Session[SessionUserInfo.SESSION_KEY] = SessionUserInfo.GetSessionUserInfo(GetLoginId().Value);
+			//Session[SessionUserInfo.SESSION_KEY] = SessionUserInfo.GetSessionUserInfo(GetLoginId().Value);
 
 			// Role取得
 			Response.Redirect("~/kurihara/SampleProject/Default.aspx");
