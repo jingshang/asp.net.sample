@@ -10,11 +10,11 @@
 <body>
 	<form id="form1" runat="server">
 		<div>
-			<asp:GridView runat="server" ID="M_APPLY_TYPE" AutoGenerateColumns="false" OnRowCommand="M_APPLY_TYPE_RowCommand">
+			<asp:GridView runat="server" ID="M_APPLY_TYPE" AutoGenerateColumns="false">
 				<Columns>
 					<asp:TemplateField>
 						<ItemTemplate>
-							<asp:Button ID="Select" Text="選択" runat="server" CommandName="SELECT" />
+							<asp:Button ID="Select" Text="選択" runat="server" OnClick="Select_Click" />
 						</ItemTemplate>
 					</asp:TemplateField>
 					<asp:TemplateField>
@@ -22,7 +22,7 @@
 							F_ID
 						</HeaderTemplate>
 						<ItemTemplate>
-							<asp:Label ID="F_ID" Text="" runat="server"></asp:Label>
+							<asp:Label ID="F_ID" Text='<%# Bind("BIND_F_ID")%>' runat="server"></asp:Label>
 						</ItemTemplate>
 					</asp:TemplateField>
 					<asp:TemplateField>
@@ -30,11 +30,24 @@
 							F_NAME
 						</HeaderTemplate>
 						<ItemTemplate>
-							<asp:Label ID="F_NAME" Text="" runat="server"></asp:Label>
+							<asp:Label ID="F_NAME" Text='<%# Bind("BIND_F_NAME")%>' runat="server"></asp:Label>
 						</ItemTemplate>
 					</asp:TemplateField>
 				</Columns>
 			</asp:GridView>
+		</div>
+		<div>
+			<table>
+				<tr>
+					<th>F_ID</th>
+					<td><asp:Label ID="F_ID1" runat="server" Text=""></asp:Label></td>
+				</tr>
+				<tr>
+					<th>F_NAME</th>
+					<td><asp:Label ID="F_NAME1" runat="server" Text=""></asp:Label></td>
+				</tr>
+				
+			</table>
 		</div>
 	</form>
 </body>
