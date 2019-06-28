@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="CustomTApplyEntry.aspx.cs" Inherits="kurihara_CustomTemplete2_CustomTApplyEntry" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="CustomTApplyModify.aspx.cs" Inherits="kurihara_CustomTemplete2_CustomTApplyModify" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="Server">
 	<div>
@@ -6,7 +6,7 @@
 			<Columns>
 				<asp:TemplateField>
 					<ItemTemplate>
-						<asp:Button ID="T_APPLY_ENTRY" Text="選択" runat="server" OnClick="T_APPLY_ENTRY_Click" />
+						<asp:Button ID="T_APPLY_MODIFY" Text="選択" runat="server" OnClick="T_APPLY_MODIFY_Click" />
 					</ItemTemplate>
 				</asp:TemplateField>
 				<asp:TemplateField>
@@ -23,6 +23,14 @@
 					</HeaderTemplate>
 					<ItemTemplate>
 						<asp:Label ID="F_VERSION" Text='<%#Bind("F_VERSION") %>' runat="server"></asp:Label>
+					</ItemTemplate>
+				</asp:TemplateField>
+				<asp:TemplateField>
+					<HeaderTemplate>
+						MODIFY_TYPE
+					</HeaderTemplate>
+					<ItemTemplate>
+						<asp:Label ID="MODIFY_TYPE" Text='<%#Bind("MODIFY_TYPE") %>' runat="server"></asp:Label>
 					</ItemTemplate>
 				</asp:TemplateField>
 				<asp:TemplateField>
@@ -135,6 +143,12 @@
 				<th>F_VERSION</th>
 				<td>
 					<asp:Label ID="VERSION" Text="" runat="server"></asp:Label></td>
+			</tr>
+			<tr>
+				<th>MODIFY_TYPE
+				</th>
+				<td>
+					<asp:Label ID="MODIFY_TYPE" Text="" runat="server"></asp:Label></td>
 			</tr>
 			<tr>
 				<th>F_TITLE</th>
