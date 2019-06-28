@@ -11,6 +11,14 @@
 				</asp:TemplateField>
 				<asp:TemplateField>
 					<HeaderTemplate>
+						F_USER_ID
+					</HeaderTemplate>
+					<ItemTemplate>
+						<asp:Label ID="F_USER_ID" runat="server" Text='<%#Bind("F_USER_ID") %>'></asp:Label>
+					</ItemTemplate>
+				</asp:TemplateField>
+				<asp:TemplateField>
+					<HeaderTemplate>
 						USER_NAME
 					</HeaderTemplate>
 					<ItemTemplate>
@@ -30,6 +38,11 @@
 	</div>
 	<div>
 		<table>
+			<tr>
+				<th>F_USER_ID</th>
+				<td>
+					<asp:Label ID="USER_ID" Text="" runat="server"></asp:Label></td>
+			</tr>
 			<tr>
 				<th>USER_NAME</th>
 				<td>
