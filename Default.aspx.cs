@@ -162,4 +162,11 @@ public partial class _Default : Page
     {
         Response.Redirect("~/kurihara/UserControlSample/Default.aspx");
     }
+
+   
+
+    protected void Button_GotoUserControlPractice2_Click1(object sender, EventArgs e)
+    {
+        Response.Redirect("~/kurihara/UserControl2/Default.aspx");
+    }
 }

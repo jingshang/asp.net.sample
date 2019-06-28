@@ -58,7 +58,7 @@ public partial class kurihara_UserControl2_Default : System.Web.UI.Page
     {
         var args = (GridViewCommandEventArgs)e;
 
-        Int32 index = int.Parse(args.CommandArgument.ToString());
+        var index = int.Parse(args.CommandArgument.ToString());
         var gridview = (GridView)args.CommandSource;
         var id = int.Parse(gridview.DataKeys[index].Values["F_ID"].ToString());
 
