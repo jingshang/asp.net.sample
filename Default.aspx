@@ -93,4 +93,8 @@
 		<h3>ユーザーコントロール練習画面2回目へ</h3>
 		<asp:Button Text="移動" ID="Button_GotoUserControlPractice2" runat="server" OnClick="Button_GotoUserControlPractice2_Click1" />
 	</div>
+	<div>
+		<h3>カスタムテンプレート練習３へ</h3>
+		<asp:Button Text="移動"　ID="Buttton_GotoUserCustom3" runat="server" OnClick="Buttton_GotoUserCustom3_Click" />
+	</div>
 </asp:Content>

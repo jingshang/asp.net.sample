@@ -169,4 +169,9 @@ public partial class _Default : Page
     {
         Response.Redirect("~/kurihara/UserControl2/Default.aspx");
     }
+
+    protected void Buttton_GotoUserCustom3_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/kurihara/CustomTemplete3/Default.aspx");
+    }
 }
