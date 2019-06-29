@@ -16,4 +16,14 @@ public partial class kurihara_CustomTemplete3_Default : System.Web.UI.Page
     {
         Response.Redirect("~/kurihara/CustomTemplete3/Custom3M_APPLY_TYPE.aspx");
     }
+
+    protected void M_BORAD_TYPE_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/kurihara/CustomTemplete3/Custom3M_BORAD_TYPE.aspx");
+    }
+
+    protected void M_FLOW_TYPE_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/kurihara/CustomTemplete3/Custom3M_FLOW_TYPE.aspx");
+    }
 }

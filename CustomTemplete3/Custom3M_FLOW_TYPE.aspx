@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Custom3M_BORAD_TYPE.aspx.cs" Inherits="kurihara_CustomTemplete3_Custom3M_BORAD_TYPE" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Custom3M_FLOW_TYPE.aspx.cs" Inherits="kurihara_CustomTemplete3_Custom3M_FLOW_TYPE" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
 	<div>
-		<asp:GridView runat="server" ID="M_BORAD_TYPE" AutoGenerateColumns="false">
+		<asp:GridView runat="server" AutoGenerateColumns="false" ID="M_FLOW_TYPE">
 			<Columns>
 				<asp:TemplateField>
 					<ItemTemplate>

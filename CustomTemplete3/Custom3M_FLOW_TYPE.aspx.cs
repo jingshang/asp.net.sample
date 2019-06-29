@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class kurihara_CustomTemplete3_Custom3M_BORAD_TYPE : System.Web.UI.Page
+public partial class kurihara_CustomTemplete3_Custom3M_FLOW_TYPE : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -24,7 +24,7 @@ public partial class kurihara_CustomTemplete3_Custom3M_BORAD_TYPE : System.Web.U
                 table1.Columns.Add(new DataColumn("F_ID", typeof(int)));
                 table1.Columns.Add(new DataColumn("F_NAME", typeof(string)));
 
-                SqlCommand com1 = new SqlCommand("SELECT * FROM M_BORAD_TYPE", con);
+                SqlCommand com1 = new SqlCommand("SELECT * FROM M_FLOW_TYPE", con);
                 SqlDataReader sdr1 = com1.ExecuteReader();
                 while (sdr1.Read())
                 {
@@ -33,9 +33,9 @@ public partial class kurihara_CustomTemplete3_Custom3M_BORAD_TYPE : System.Web.U
                     row["F_NAME"] = sdr1["F_NAME"].ToString();
                     table1.Rows.Add(row);
                 }
-                this.M_BORAD_TYPE.DataSource = table1;
-                this.M_BORAD_TYPE.DataKeyNames = new string[2] { "F_ID", "F_NAME" };
-                this.M_BORAD_TYPE.DataBind();
+                this.M_FLOW_TYPE.DataSource = table1;
+                this.M_FLOW_TYPE.DataKeyNames = new string[2] { "F_ID", "F_NAME" };
+                this.M_FLOW_TYPE.DataBind();
                 sdr1.Close();
             }
             catch
@@ -55,8 +55,8 @@ public partial class kurihara_CustomTemplete3_Custom3M_BORAD_TYPE : System.Web.U
         var button = (Button)sender;
         var row = (GridViewRow)button.Parent.Parent;
 
-        var f_id = M_BORAD_TYPE.DataKeys[row.RowIndex].Values["F_ID"].ToString();
-        var f_name = M_BORAD_TYPE.DataKeys[row.RowIndex].Values["F_NAME"].ToString();
+        var f_id = M_FLOW_TYPE.DataKeys[row.RowIndex].Values["F_ID"].ToString();
+        var f_name = M_FLOW_TYPE.DataKeys[row.RowIndex].Values["F_NAME"].ToString();
 
         ID.Text = f_id;
         NAME.Text = f_name;
@@ -78,7 +78,7 @@ public partial class kurihara_CustomTemplete3_Custom3M_BORAD_TYPE : System.Web.U
 
             try
             {
-                command.CommandText = @"update M_BORAD_TYPE set  F_NAME=@F_NAME where F_ID=@id";
+                command.CommandText = @"update M_FLOW_TYPE set  F_NAME=@F_NAME where F_ID=@id";
                 command.Parameters.Add(new SqlParameter("@id", ID.Text));
                 command.Parameters.Add(new SqlParameter("@F_NAME", NAME.Text));
 
@@ -112,6 +112,6 @@ public partial class kurihara_CustomTemplete3_Custom3M_BORAD_TYPE : System.Web.U
             connection.Dispose();
 
         }
-        Response.Redirect("~/kurihara/CustomTemplete3/Custom3M_BORAD_TYPE.aspx");
+        Response.Redirect("~/kurihara/CustomTemplete3/Custom3M_FLOW_TYPE.aspx");
     }
 }
