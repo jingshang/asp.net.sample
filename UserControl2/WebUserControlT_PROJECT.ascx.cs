@@ -8,8 +8,21 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class kurihara_CustomTemplete2_CustomTProject : System.Web.UI.Page
+public partial class kurihara_UserControl2_WebUserControlT_PROJECT : System.Web.UI.UserControl
 {
+    private EventHandler original_event;
+
+    public event EventHandler OriginalEvent
+    {
+        add
+        {
+            original_event += value;
+        }
+        remove
+        {
+            original_event -= value;
+        }
+    }
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -64,27 +77,16 @@ inner join M_BORAD_TYPE B on A.F_BORAD_TYPE=B.F_ID", con);
         }
     }
 
-    protected void SELECT_Click(object sender, EventArgs e)
-
-
-
-
+    protected void T_PROJECT_RowCommand(object sender, GridViewCommandEventArgs e)
     {
-        var button = (Button)sender;
-        var row = (GridViewRow)button.Parent.Parent;
-
-        var f_id = T_PROJECT.DataKeys[row.RowIndex].Values["F_ID"].ToString();
-        var f_project_number = T_PROJECT.DataKeys[row.RowIndex].Values["F_PROJECT_NUMBER"].ToString();
-        var borad_type = T_PROJECT.DataKeys[row.RowIndex].Values["BORAD_TYPE"].ToString();
-        var f_create_user_id = T_PROJECT.DataKeys[row.RowIndex].Values["F_CREATE_USER_ID"].ToString();
-        var f_create_date = T_PROJECT.DataKeys[row.RowIndex].Values["F_CREATE_DATE"].ToString();
-
-
-        ID.Text = f_id;
-        PROJECT_NUMBER.Text = f_project_number;
-        BORAD_TYPE.Text = borad_type;
-        CREATE_USER_ID.Text = f_create_user_id;
-        CREATE_DATE.Text = f_create_date;
-
+        switch (e.CommandName)
+        {
+            case "SELECT":
+                if (original_event != null)
+                {
+                    original_event(sender, e);
+                }
+                break;
+        }
     }
 }

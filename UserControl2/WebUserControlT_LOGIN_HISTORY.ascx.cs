@@ -8,8 +8,21 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class kurihara_CustomTemplete2_CustomTLoginHistory : System.Web.UI.Page
+public partial class kurihara_UserControl2_WebUserControlT_LOGIN_HISTORY : System.Web.UI.UserControl
 {
+    private EventHandler original_event;
+
+    public event EventHandler OriginalEvent
+    {
+        add
+        {
+            original_event += value;
+        }
+        remove
+        {
+            original_event -= value;
+        }
+    }
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -59,26 +72,16 @@ FROM T_LOGIN_HISTORY ", con);
         }
     }
 
-    protected void SELECT_Click(object sender, EventArgs e)
-
-
-
+    protected void T_LOGIN_HISTORY_RowCommand(object sender, GridViewCommandEventArgs e)
     {
-        var button = (Button)sender;
-        var row = (GridViewRow)button.Parent.Parent;
-
-        var f_id = T_LOGIN_HISTORY.DataKeys[row.RowIndex].Values["F_ID"].ToString();
-        var f_input_mail = T_LOGIN_HISTORY.DataKeys[row.RowIndex].Values["F_INPUT_MAIL"].ToString();
-        var f_login_result = T_LOGIN_HISTORY.DataKeys[row.RowIndex].Values["F_LOGIN_RESULT"].ToString();
-        var f_ip = T_LOGIN_HISTORY.DataKeys[row.RowIndex].Values["F_IP"].ToString();
-        var f_create_date = T_LOGIN_HISTORY.DataKeys[row.RowIndex].Values["F_CREATE_DATE"].ToString();
-
-
-        ID.Text = f_id;
-        INPUT_MAIL.Text = f_input_mail;
-        LOGIN_RESULT.Text = f_login_result;
-        IP.Text = f_ip;
-        CREATE_DATE.Text = f_create_date;
-
+        switch (e.CommandName)
+        {
+            case "SELECT":
+                if (original_event != null)
+                {
+                    original_event(sender, e);
+                }
+                break;
+        }
     }
 }

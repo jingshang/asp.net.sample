@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class kurihara_UserControl2_WebUserControlM_BORAD_TYPE : System.Web.UI.UserControl
+public partial class kurihara_UserControl2_WebUserControlT_USER_ROLE : System.Web.UI.UserControl
 {
     private EventHandler original_event;
 
@@ -27,7 +27,6 @@ public partial class kurihara_UserControl2_WebUserControlM_BORAD_TYPE : System.W
     {
         if (!IsPostBack)
         {
-
             string ConnectionStr = ConfigurationManager.ConnectionStrings["MyConnectionStr"].ConnectionString;
             SqlConnection con = new SqlConnection(ConnectionStr);
 
@@ -35,21 +34,31 @@ public partial class kurihara_UserControl2_WebUserControlM_BORAD_TYPE : System.W
             try
             {
                 DataTable table1 = new System.Data.DataTable();
-                table1.Columns.Add(new DataColumn("F_ID", typeof(int)));
-                table1.Columns.Add(new DataColumn("F_NAME", typeof(string)));
-
-                SqlCommand com1 = new SqlCommand("SELECT * FROM M_BORAD_TYPE", con);
+                table1.Columns.Add(new DataColumn("F_USER_ID", typeof(string)));
+                table1.Columns.Add(new DataColumn("USER_NAME", typeof(string)));
+                table1.Columns.Add(new DataColumn("ROLE_NAME", typeof(string)));
+                SqlCommand com1 = new SqlCommand(@"
+SELECT 
+F_USER_ID,
+B.F_LAST_NAME + B.F_FIRST_NAME as 'USER_NAME',
+C.F_ROLE_NAME as 'ROLE_NAME' 
+FROM T_USER_ROLE A
+inner join T_USER B on A.F_USER_ID=B.F_ID
+inner join M_ROLE C on A.F_ROLE_ID=C.F_ID
+", con);
                 SqlDataReader sdr1 = com1.ExecuteReader();
                 while (sdr1.Read())
                 {
                     DataRow row = table1.NewRow();
-                    row["F_ID"] = sdr1["F_ID"].ToString();
-                    row["F_NAME"] = sdr1["F_NAME"].ToString();
+                    row["F_USER_ID"] = sdr1["F_USER_ID"].ToString();
+                    row["USER_NAME"] = sdr1["USER_NAME"].ToString();
+                    row["ROLE_NAME"] = sdr1["ROLE_NAME"].ToString();
+
                     table1.Rows.Add(row);
                 }
-                this.M_BORAD_TYPE.DataSource = table1;
-                this.M_BORAD_TYPE.DataKeyNames = new string[2] { "F_ID", "F_NAME" };
-                this.M_BORAD_TYPE.DataBind();
+                this.T_USER_ROLE.DataSource = table1;
+                this.T_USER_ROLE.DataKeyNames = new string[3] { "F_USER_ID", "ROLE_NAME", "USER_NAME" };
+                this.T_USER_ROLE.DataBind();
                 sdr1.Close();
             }
             catch
@@ -64,7 +73,7 @@ public partial class kurihara_UserControl2_WebUserControlM_BORAD_TYPE : System.W
         }
     }
 
-    protected void M_BORAD_TYPE_RowCommand(object sender, GridViewCommandEventArgs e)
+    protected void T_USER_ROLE_RowCommand(object sender, GridViewCommandEventArgs e)
     {
         switch (e.CommandName)
         {

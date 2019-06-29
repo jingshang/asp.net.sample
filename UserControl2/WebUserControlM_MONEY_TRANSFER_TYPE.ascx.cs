@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class kurihara_UserControl2_WebUserControlM_BORAD_TYPE : System.Web.UI.UserControl
+public partial class kurihara_UserControl2_WebUserControlM_MONEY_TRANSFER_TYPE : System.Web.UI.UserControl
 {
     private EventHandler original_event;
 
@@ -38,7 +38,7 @@ public partial class kurihara_UserControl2_WebUserControlM_BORAD_TYPE : System.W
                 table1.Columns.Add(new DataColumn("F_ID", typeof(int)));
                 table1.Columns.Add(new DataColumn("F_NAME", typeof(string)));
 
-                SqlCommand com1 = new SqlCommand("SELECT * FROM M_BORAD_TYPE", con);
+                SqlCommand com1 = new SqlCommand("SELECT * FROM M_MONEY_TRANSFER_TYPE", con);
                 SqlDataReader sdr1 = com1.ExecuteReader();
                 while (sdr1.Read())
                 {
@@ -47,9 +47,9 @@ public partial class kurihara_UserControl2_WebUserControlM_BORAD_TYPE : System.W
                     row["F_NAME"] = sdr1["F_NAME"].ToString();
                     table1.Rows.Add(row);
                 }
-                this.M_BORAD_TYPE.DataSource = table1;
-                this.M_BORAD_TYPE.DataKeyNames = new string[2] { "F_ID", "F_NAME" };
-                this.M_BORAD_TYPE.DataBind();
+                this.M_MONEY_TRANSFER_TYPE.DataSource = table1;
+                this.M_MONEY_TRANSFER_TYPE.DataKeyNames = new string[2] { "F_ID", "F_NAME" };
+                this.M_MONEY_TRANSFER_TYPE.DataBind();
                 sdr1.Close();
             }
             catch
@@ -64,7 +64,7 @@ public partial class kurihara_UserControl2_WebUserControlM_BORAD_TYPE : System.W
         }
     }
 
-    protected void M_BORAD_TYPE_RowCommand(object sender, GridViewCommandEventArgs e)
+    protected void M_MONEY_TRANSFER_TYPE_RowCommand(object sender, GridViewCommandEventArgs e)
     {
         switch (e.CommandName)
         {

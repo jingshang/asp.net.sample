@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class kurihara_UserControl2_WebUserControlM_BORAD_TYPE : System.Web.UI.UserControl
+public partial class kurihara_UserControl2_WebUserControlM_ROLE : System.Web.UI.UserControl
 {
     private EventHandler original_event;
 
@@ -36,20 +36,20 @@ public partial class kurihara_UserControl2_WebUserControlM_BORAD_TYPE : System.W
             {
                 DataTable table1 = new System.Data.DataTable();
                 table1.Columns.Add(new DataColumn("F_ID", typeof(int)));
-                table1.Columns.Add(new DataColumn("F_NAME", typeof(string)));
+                table1.Columns.Add(new DataColumn("F_ROLE_NAME", typeof(string)));
 
-                SqlCommand com1 = new SqlCommand("SELECT * FROM M_BORAD_TYPE", con);
+                SqlCommand com1 = new SqlCommand("SELECT * FROM M_ROLE", con);
                 SqlDataReader sdr1 = com1.ExecuteReader();
                 while (sdr1.Read())
                 {
                     DataRow row = table1.NewRow();
                     row["F_ID"] = sdr1["F_ID"].ToString();
-                    row["F_NAME"] = sdr1["F_NAME"].ToString();
+                    row["F_ROLE_NAME"] = sdr1["F_ROLE_NAME"].ToString();
                     table1.Rows.Add(row);
                 }
-                this.M_BORAD_TYPE.DataSource = table1;
-                this.M_BORAD_TYPE.DataKeyNames = new string[2] { "F_ID", "F_NAME" };
-                this.M_BORAD_TYPE.DataBind();
+                this.M_ROLE.DataSource = table1;
+                this.M_ROLE.DataKeyNames = new string[2] { "F_ID", "F_ROLE_NAME" };
+                this.M_ROLE.DataBind();
                 sdr1.Close();
             }
             catch
@@ -64,7 +64,7 @@ public partial class kurihara_UserControl2_WebUserControlM_BORAD_TYPE : System.W
         }
     }
 
-    protected void M_BORAD_TYPE_RowCommand(object sender, GridViewCommandEventArgs e)
+    protected void M_ROLE_RowCommand(object sender, GridViewCommandEventArgs e)
     {
         switch (e.CommandName)
         {
